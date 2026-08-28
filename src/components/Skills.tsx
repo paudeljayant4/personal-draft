@@ -57,6 +57,7 @@ export const Skills = () => {
           <div className="flex flex-wrap gap-4 justify-center max-w-3xl mx-auto">
             {skills.map((skill, i) => {
               const itemRef = useReveal();
+              const colorVar = i % 3 === 0 ? "var(--gold)" : i % 3 === 1 ? "var(--gold-triadic-1)" : "var(--gold-triadic-2)";
               return (
                 <div
                   key={skill.name}
@@ -64,12 +65,26 @@ export const Skills = () => {
                   className="reveal group"
                   style={{ transitionDelay: `${(i % 7) * 100}ms` }}
                 >
-                  <div className="relative px-6 py-4 rounded-full bg-card/40 backdrop-blur-sm border border-border/40 text-sm font-light text-kuro/80 dark:text-shiro/80 transition-all duration-500 hover:border-gold/30 hover:-translate-y-0.5 group-hover:text-gold dark:group-hover:text-gold">
-                    <span className="font-mono text-[10px] text-kuro/40 dark:text-shiro/40 mr-3">
+                  <div
+                    className="relative px-6 py-4 rounded-full bg-card/40 backdrop-blur-sm border border-border/40 text-sm font-light text-kuro/80 dark:text-shiro/80 transition-all duration-500 hover:-translate-y-0.5"
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = `hsl(${colorVar.replace("var(--", "").replace(")", "")} / 0.4)`;
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--border) / 0.4)";
+                    }}
+                  >
+                    <span
+                      className="font-mono text-[10px] text-kuro/40 dark:text-shiro/40 mr-3 transition-colors duration-500"
+                      style={{ color: `hsl(${colorVar.replace("var(--", "").replace(")", "")} / 0.5)` }}
+                    >
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     {skill.name}
-                    <span className="ml-3 font-jp text-[10px] text-kuro/30 dark:text-shiro/30 group-hover:text-gold/50 transition-colors duration-500">
+                    <span
+                      className="ml-3 font-jp text-[10px] transition-colors duration-500"
+                      style={{ color: `hsl(${colorVar.replace("var(--", "").replace(")", "")} / 0.6)` }}
+                    >
                       {skill.jp}
                     </span>
                   </div>

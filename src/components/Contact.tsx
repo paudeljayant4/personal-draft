@@ -38,6 +38,7 @@ const SocialCard = ({
   url,
   jp,
   delay,
+  colorIndex,
 }: {
   Icon: LucideIcon;
   name: string;
@@ -45,23 +46,52 @@ const SocialCard = ({
   url: string;
   jp: string;
   delay: number;
+  colorIndex: number;
 }) => {
   const ref = useReveal<HTMLAnchorElement>();
+  const colors = ["var(--gold)", "var(--gold-triadic-1)", "var(--gold-triadic-2)"];
+  const color = colors[colorIndex % 3];
+
   return (
     <a
       ref={ref}
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="reveal group relative flex flex-col items-start p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 transition-all duration-700 hover:border-gold/30 hover:-translate-y-1"
+      className="reveal group relative flex flex-col items-start p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 transition-all duration-700 hover:-translate-y-1"
       style={{ transitionDelay: `${delay}ms` }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLElement).style.borderColor = `hsl(${color.replace("var(--", "").replace(")", "")} / 0.4)`;
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--border) / 0.4)";
+      }}
     >
-      <div className="glow-ambient glow-gold w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ position: "absolute", inset: 0 }} />
-      <div className="absolute top-6 right-6 font-jp text-xs text-kuro/35 dark:text-shiro/35 group-hover:text-gold/50 transition-colors duration-500">
-        {jp}
+      {/* Triadic color glow on hover */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse 80% 60% at 50% 100%, hsl(${color.replace("var(--", "").replace(")", "")} / 0.15), transparent 70%)`,
+        }}
+      />
+      <div
+        className="absolute top-6 right-6 font-jp text-xs transition-colors duration-500"
+        style={{ color: "hsl(var(--kuro) / 0.35)" }}
+      >
+        <span className="group-hover:opacity-100 opacity-70 transition-opacity" style={{ color: `hsl(${color.replace("var(--", "").replace(")", "")} / 0.5)` }}>
+          {jp}
+        </span>
       </div>
-      <div className="relative mb-6 w-12 h-12 rounded-lg bg-kuro/5 dark:bg-shiro/10 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
-        <Icon className="w-5 h-5 text-kuro/70 dark:text-shiro/70 group-hover:text-gold transition-colors duration-500" strokeWidth={1.5} />
+      <div className="relative mb-6 w-12 h-12 rounded-lg bg-kuro/5 dark:bg-shiro/10 flex items-center justify-center transition-colors duration-500">
+        <div
+          className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500"
+          style={{ backgroundColor: `hsl(${color.replace("var(--", "").replace(")", "")} / 0.12)` }}
+        />
+        <Icon
+          className="relative w-5 h-5 text-kuro/70 dark:text-shiro/70 transition-colors duration-500"
+          strokeWidth={1.5}
+          style={{ color: `hsl(${color.replace("var(--", "").replace(")", "")})` }}
+        />
       </div>
       <div className="relative font-display text-xl font-light text-kuro/95 dark:text-shiro/95">
         {name}
@@ -69,8 +99,13 @@ const SocialCard = ({
       <div className="relative text-xs text-kuro/55 dark:text-shiro/55 mt-2 font-mono">
         {handle}
       </div>
-      <div className="absolute bottom-6 right-6 text-kuro/35 dark:text-shiro/35 group-hover:text-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500">
-        ↗
+      <div
+        className="absolute bottom-6 right-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500"
+        style={{ color: "hsl(var(--kuro) / 0.35)" }}
+      >
+        <span className="group-hover:opacity-100 opacity-70 transition-opacity" style={{ color: `hsl(${color.replace("var(--", "").replace(")", "")})` }}>
+          ↗
+        </span>
       </div>
     </a>
   );
@@ -88,18 +123,21 @@ export const Contact = () => {
         <div className="absolute inset-0 kagome-pattern opacity-3" />
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
-        
-        {/* NEW: Color theory background art - triadic harmony */}
-        <div className="absolute inset-0 gold-triadic-pattern opacity-10" />
-        <div className="absolute inset-0 color-theory-overlay" />
-        
-        <div className="glow-ambient glow-sakura w-[500px] h-[500px] top-[-10%] left-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
-        <div className="glow-ambient glow-matcha w-[450px] h-[450px] bottom-[-15%] right-[-10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-6s" }} />
-        
-        {/* NEW: Gold ambient glows */}
-        <div className="glow-ambient glow-gold w-[400px] h-[400px] top-[30%] right-[20%] opacity-18 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
-        <div className="glow-ambient glow-gold-triadic-1 w-[300px] h-[300px] bottom-[25%] left-[15%] opacity-12 animate-pulse-subtle" style={{ animationDelay: "-7s" }} />
-        
+
+        {/* Triadic harmony pattern - more visible */}
+        <div className="absolute inset-0 gold-triadic-pattern opacity-20" />
+
+        {/* Triadic color theory radial overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_30%,hsl(var(--gold)/0.08),transparent_50%),radial-gradient(circle_at_75%_70%,hsl(var(--gold-triadic-1)/0.08),transparent_50%),radial-gradient(circle_at_50%_50%,hsl(var(--gold-triadic-2)/0.05),transparent_60%)] animate-breathe-soft" />
+
+        <div className="glow-ambient glow-sakura w-[500px] h-[500px] top-[-10%] left-[-15%] opacity-30 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
+        <div className="glow-ambient glow-matcha w-[450px] h-[450px] bottom-[-15%] right-[-10%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-6s" }} />
+
+        {/* Triadic gold ambient glows */}
+        <div className="glow-ambient glow-gold w-[450px] h-[450px] top-[25%] right-[15%] opacity-22 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
+        <div className="glow-ambient glow-gold-triadic-1 w-[350px] h-[350px] bottom-[20%] left-[10%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-7s" }} />
+        <div className="glow-ambient glow-gold-triadic-2 w-[300px] h-[300px] top-[60%] right-[30%] opacity-12 animate-breathe-soft" style={{ animationDelay: "-5s" }} />
+
         <div className="absolute inset-0 grid-veil opacity-25" />
         <div className="absolute inset-0 paper-veil" />
       </div>
@@ -133,6 +171,7 @@ export const Contact = () => {
                 url={social.url}
                 jp={social.jp}
                 delay={i * 150}
+                colorIndex={i}
               />
             ))}
           </div>

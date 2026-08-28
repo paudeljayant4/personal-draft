@@ -28,7 +28,7 @@ export const Footer = () => {
               href="https://www.instagram.com/grusco_69/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-kuro/45 dark:text-shiro/45 hover:text-gold transition-colors duration-300"
+              className="text-kuro/45 dark:text-shiro/45 hover:text-gold transition-colors duration-300 hover:scale-110 transform"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" strokeWidth={1.5} />
@@ -37,7 +37,7 @@ export const Footer = () => {
               href="https://www.facebook.com/jayant.paudel.682446"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-kuro/45 dark:text-shiro/45 hover:text-gold transition-colors duration-300"
+              className="text-kuro/45 dark:text-shiro/45 hover:text-gold-triadic-1 transition-colors duration-300 hover:scale-110 transform"
               aria-label="Facebook"
             >
               <Facebook className="w-4 h-4" strokeWidth={1.5} />
@@ -46,7 +46,7 @@ export const Footer = () => {
               href="https://www.linkedin.com/in/jayant-paudel-272077369/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-kuro/45 dark:text-shiro/45 hover:text-gold transition-colors duration-300"
+              className="text-kuro/45 dark:text-shiro/45 hover:text-gold-triadic-2 transition-colors duration-300 hover:scale-110 transform"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" strokeWidth={1.5} />

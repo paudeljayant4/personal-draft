@@ -62,33 +62,91 @@ const InterestCard = ({
       className="reveal group"
       style={{ transitionDelay: `${(index % 3) * 150}ms` }}
     >
-      <div className="relative h-full p-10 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 transition-all duration-700 hover:border-gold/30 hover:-translate-y-1">
-        
-        {/* Enhanced hover glow with gold */}
-        <div className="glow-ambient glow-gold w-full h-full inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ position: "absolute" }} />
-        
-        {/* Japanese character - very subtle with gold tint */}
-        <div className="absolute top-8 right-8 font-jp text-4xl text-gold/8 dark:text-gold/12 group-hover:text-gold/20 transition-colors duration-700 font-light">
+      <div
+        className="relative h-full p-10 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 transition-all duration-700 hover:-translate-y-1"
+        data-card-index={index % 3}
+      >
+        {/* Hover glow - card-specific triadic color */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl pointer-events-none"
+          style={{
+            background:
+              index % 3 === 0
+                ? "radial-gradient(circle at 50% 0%, hsl(var(--gold) / 0.14), transparent 60%)"
+                : index % 3 === 1
+                ? "radial-gradient(circle at 50% 0%, hsl(var(--gold-triadic-1) / 0.14), transparent 60%)"
+                : "radial-gradient(circle at 50% 0%, hsl(var(--gold-triadic-2) / 0.14), transparent 60%)",
+          }}
+        />
+
+        {/* Japanese character - colored per index */}
+        <div
+          className="absolute top-8 right-8 font-jp text-4xl font-light transition-colors duration-700"
+          style={{
+            color:
+              index % 3 === 0
+                ? "hsl(var(--gold) / 0.12)"
+                : index % 3 === 1
+                ? "hsl(var(--gold-triadic-1) / 0.18)"
+                : "hsl(var(--gold-triadic-2) / 0.20)",
+          }}
+        >
           {jp}
         </div>
 
-        {/* Icon - minimal */}
-        <div className="relative mb-8 w-12 h-12 rounded-lg bg-kuro/5 dark:bg-shiro/10 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
-          <Icon className="w-5 h-5 text-kuro/70 dark:text-shiro/70 group-hover:text-gold transition-colors duration-500" strokeWidth={1.5} />
+        {/* Icon - colored per index on hover */}
+        <div className="relative mb-8 w-12 h-12 rounded-lg bg-kuro/5 dark:bg-shiro/10 flex items-center justify-center transition-colors duration-500">
+          <div
+            className="absolute inset-0 rounded-lg transition-all duration-500 opacity-0 group-hover:opacity-100"
+            style={{
+              backgroundColor:
+                index % 3 === 0
+                  ? "hsl(var(--gold) / 0.15)"
+                  : index % 3 === 1
+                  ? "hsl(var(--gold-triadic-1) / 0.18)"
+                  : "hsl(var(--gold-triadic-2) / 0.20)",
+            }}
+          />
+          <Icon
+            className="relative w-5 h-5 text-kuro/70 dark:text-shiro/70 transition-colors duration-500"
+            strokeWidth={1.5}
+          />
         </div>
 
         <h3 className="font-display text-2xl font-light tracking-[-0.02em] text-kuro/95 dark:text-shiro/95 mb-2">
           {title}
         </h3>
-        
-        <div className="font-jp text-xs text-gold/60 mb-5 tracking-wide">{jpMeaning}</div>
+
+        <div
+          className="font-jp text-xs mb-5 tracking-wide"
+          style={{
+            color:
+              index % 3 === 0
+                ? "hsl(var(--gold) / 0.7)"
+                : index % 3 === 1
+                ? "hsl(var(--gold-triadic-1) / 0.75)"
+                : "hsl(var(--gold-triadic-2) / 0.75)",
+          }}
+        >
+          {jpMeaning}
+        </div>
 
         <p className="text-sm font-light text-kuro/60 dark:text-shiro/60 leading-relaxed">
           {description}
         </p>
 
-        {/* Enhanced hover accent with gold */}
-        <div className="mt-8 h-px w-0 bg-gradient-to-r from-gold to-transparent group-hover:w-16 transition-all duration-700 ease-out" />
+        {/* Triadic color accent line */}
+        <div
+          className="mt-8 h-px w-0 group-hover:w-20 transition-all duration-700 ease-out"
+          style={{
+            background:
+              index % 3 === 0
+                ? "linear-gradient(90deg, hsl(var(--gold)), transparent)"
+                : index % 3 === 1
+                ? "linear-gradient(90deg, hsl(var(--gold-triadic-1)), transparent)"
+                : "linear-gradient(90deg, hsl(var(--gold-triadic-2)), transparent)",
+          }}
+        />
       </div>
     </div>
   );

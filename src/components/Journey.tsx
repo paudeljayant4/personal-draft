@@ -43,6 +43,9 @@ const ExperienceItem = ({
   index: number;
 }) => {
   const ref = useReveal();
+  const colorVar = index % 3 === 0 ? "var(--gold)" : index % 3 === 1 ? "var(--gold-triadic-1)" : "var(--gold-triadic-2)";
+  const colorName = colorVar.replace("var(--", "").replace(")", "");
+
   return (
     <div
       ref={ref}
@@ -50,35 +53,59 @@ const ExperienceItem = ({
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="md:grid md:grid-cols-12 md:gap-12 items-baseline">
-        {/* Enhanced timeline marker with gold */}
+        {/* Enhanced timeline marker with triadic color rotation */}
         <div className="hidden md:flex md:col-span-3 items-center justify-end gap-6">
           <div className="text-right">
             <div className="font-mono text-xs text-kuro/55 dark:text-shiro/55 tracking-wider">
               {exp.period}
             </div>
-            <div className="mt-2 font-jp text-xs text-gold/70 tracking-wide">{exp.jp}</div>
+            <div
+              className="mt-2 font-jp text-xs tracking-wide"
+              style={{ color: `hsl(${colorName} / 0.7)` }}
+            >
+              {exp.jp}
+            </div>
           </div>
           <div className="relative w-3 h-3 flex-shrink-0">
-            <div className="absolute inset-0 rounded-full bg-gold/30" />
-            <div className="absolute inset-[2px] rounded-full bg-gold/80" />
+            <div
+              className="absolute inset-0 rounded-full animate-pulse-subtle"
+              style={{ backgroundColor: `hsl(${colorName} / 0.25)` }}
+            />
+            <div
+              className="absolute inset-[2px] rounded-full"
+              style={{ backgroundColor: `hsl(${colorName} / 0.8)` }}
+            />
           </div>
         </div>
 
         {/* Enhanced content */}
         <div className="md:col-span-9 md:pl-16 relative">
-          {/* Enhanced vertical line with gold */}
-          <div className="hidden md:block absolute left-4 top-3 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/15 to-transparent" />
+          {/* Enhanced vertical line with triadic color */}
+          <div
+            className="hidden md:block absolute left-4 top-3 bottom-0 w-px"
+            style={{
+              background: `linear-gradient(to bottom, hsl(${colorName} / 0.4), hsl(${colorName} / 0.15), transparent)`,
+            }}
+          />
 
           {/* Mobile timeline */}
           <div className="flex md:hidden items-center gap-4 mb-5">
-            <div className="w-2.5 h-2.5 rounded-full bg-gold/80" />
+            <div
+              className="w-2.5 h-2.5 rounded-full"
+              style={{ backgroundColor: `hsl(${colorName} / 0.8)` }}
+            />
             <div className="font-mono text-xs text-kuro/55 dark:text-shiro/55">
               {exp.period}
             </div>
           </div>
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-gold/70 font-mono">{exp.tag}</span>
+            <span
+              className="text-[10px] uppercase tracking-[0.2em] font-mono"
+              style={{ color: `hsl(${colorName} / 0.7)` }}
+            >
+              {exp.tag}
+            </span>
             <span className="font-jp text-xs text-kuro/40 dark:text-shiro/40">{exp.jp}</span>
           </div>
 
@@ -101,7 +128,7 @@ export const Journey = () => {
     <section id="journey" className="relative px-6 py-40 md:py-56 overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/99 to-shiro dark:from-kuro dark:via-kuro/99 dark:to-kuro" />
-        
+
         {/* Enhanced background patterns */}
         <div className="absolute inset-0 asanoha-pattern opacity-7" />
         <div className="absolute inset-0 komon-pattern opacity-5" />
@@ -109,18 +136,21 @@ export const Journey = () => {
         <div className="absolute inset-0 kagome-pattern opacity-4" />
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
-        
-        {/* NEW: Color theory background art - triadic harmony */}
-        <div className="absolute inset-0 gold-triadic-pattern opacity-12" />
-        <div className="absolute inset-0 color-theory-overlay" />
-        
-        <div className="glow-ambient glow-koh w-[500px] h-[500px] top-[5%] left-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
-        <div className="glow-ambient glow-sakura w-[450px] h-[450px] bottom-[5%] right-[-10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-6s" }} />
-        
-        {/* NEW: Gold ambient glows */}
-        <div className="glow-ambient glow-gold w-[400px] h-[400px] top-[40%] left-[30%] opacity-15 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
-        <div className="glow-ambient glow-gold-triadic-2 w-[300px] h-[300px] bottom-[30%] right-[20%] opacity-12 animate-pulse-subtle" style={{ animationDelay: "-7s" }} />
-        
+
+        {/* Triadic harmony pattern - more visible */}
+        <div className="absolute inset-0 gold-triadic-pattern opacity-20" />
+
+        {/* Triadic radial overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_20%_60%,hsl(var(--gold)/0.06),transparent_60%),radial-gradient(ellipse_50%_40%_at_80%_30%,hsl(var(--gold-triadic-2)/0.06),transparent_60%)] animate-breathe-soft" />
+
+        <div className="glow-ambient glow-koh w-[500px] h-[500px] top-[5%] left-[-15%] opacity-30 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
+        <div className="glow-ambient glow-sakura w-[450px] h-[450px] bottom-[5%] right-[-10%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-6s" }} />
+
+        {/* Triadic gold ambient glows */}
+        <div className="glow-ambient glow-gold w-[450px] h-[450px] top-[30%] left-[25%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
+        <div className="glow-ambient glow-gold-triadic-1 w-[350px] h-[350px] top-[15%] right-[10%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-5s" }} />
+        <div className="glow-ambient glow-gold-triadic-2 w-[350px] h-[350px] bottom-[25%] right-[15%] opacity-15 animate-breathe-soft" style={{ animationDelay: "-7s" }} />
+
         <div className="absolute inset-0 grid-veil opacity-30" />
         <div className="absolute inset-0 paper-veil" />
       </div>

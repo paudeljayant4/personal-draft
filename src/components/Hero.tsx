@@ -145,6 +145,10 @@ export const Hero = () => {
         <span className="hidden md:block font-jp tracking-[0.15em]">存在 — Sonzai</span>
         <span>J.P.</span>
       </div>
+
+      {/* Beautiful warm-to-cool gradient fade at bottom - color theory transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-shiro/0 to-shiro/60 dark:from-kuro/0 dark:to-kuro/60" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(to_top,hsl(var(--gold)/0.06),transparent)]" />
     </section>
   );
 };

@@ -48,7 +48,7 @@ export const About = () => {
                   <span>About</span>
                 </div>
               </div>
-              <div className="font-jp text-5xl text-gold/30 dark:text-gold/20 font-light">人</div>
+              <div className="font-jp text-6xl text-gold/35 dark:text-gold/25 font-light leading-none [text-shadow:_0_0_30px_hsl(var(--gold)/0.3)]">人</div>
               <div className="mt-6 text-[10px] uppercase tracking-[0.3em] text-kuro/40 dark:text-shiro/40 font-mono">Person · Hito</div>
             </div>
 
@@ -58,7 +58,13 @@ export const About = () => {
                 A little about me.
               </h2>
 
-              <div className="w-12 h-px bg-gradient-to-r from-gold to-gold/30" />
+              {/* Triadic harmony divider with three color stops */}
+              <div className="flex items-center gap-2">
+                <div className="h-px flex-1 max-w-[60px] bg-gradient-to-r from-gold/0 to-gold" />
+                <div className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_10px_hsl(var(--gold)/0.5)]" />
+                <div className="w-1 h-1 rounded-full bg-gold-triadic-1" />
+                <div className="w-1 h-1 rounded-full bg-gold-triadic-2" />
+              </div>
 
               <div className="space-y-8 text-base md:text-lg font-light text-kuro/72 dark:text-shiro/72 leading-[1.9]">
                 <p>

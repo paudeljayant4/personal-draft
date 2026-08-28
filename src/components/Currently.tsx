@@ -13,7 +13,7 @@ export const Currently = () => {
     <section className="relative px-6 py-40 md:py-56 overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/99 to-shiro dark:from-kuro dark:via-kuro/99 dark:to-kuro" />
-        
+
         {/* Enhanced background patterns */}
         <div className="absolute inset-0 asanoha-pattern opacity-5" />
         <div className="absolute inset-0 komon-pattern opacity-3" />
@@ -21,15 +21,17 @@ export const Currently = () => {
         <div className="absolute inset-0 kagome-pattern opacity-3" />
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
-        
-        {/* NEW: Color theory background art - analogous harmony */}
-        <div className="absolute inset-0 gold-analogous-pattern opacity-8" />
-        <div className="absolute inset-0 color-theory-overlay" />
-        
-        {/* Single central glow with gold */}
-        <div className="glow-ambient glow-gold w-[700px] h-[700px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25 animate-breathe-soft" />
-        <div className="glow-ambient glow-sakura w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
-        
+
+        {/* Analogous harmony pattern - more visible */}
+        <div className="absolute inset-0 gold-analogous-pattern opacity-18" />
+
+        {/* ANALOGOUS color theory radial overlay - warm gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,hsl(var(--gold-analogous-1)/0.06),hsl(var(--gold)/0.10),hsl(var(--gold-analogous-2)/0.04),transparent_70%)] animate-breathe-soft" />
+
+        {/* Powerful central gold glow - the focal point */}
+        <div className="glow-ambient glow-gold w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-35 animate-breathe-soft" />
+        <div className="glow-ambient glow-sakura w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
+
         <div className="absolute inset-0 grid-veil opacity-20" />
         <div className="absolute inset-0 paper-veil" />
       </div>
@@ -45,7 +47,8 @@ export const Currently = () => {
               </div>
             </div>
 
-            <h2 className="font-display text-4xl md:text-5xl font-light tracking-[-0.03em] text-kuro/95 dark:text-shiro/95 mb-18">
+            <h2 className="relative font-display text-4xl md:text-5xl font-light tracking-[-0.03em] text-kuro/95 dark:text-shiro/95 mb-18">
+              <span className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_50%,hsl(var(--gold)/0.12),transparent_70%)] blur-xl -z-10" />
               Right now.
             </h2>
 
