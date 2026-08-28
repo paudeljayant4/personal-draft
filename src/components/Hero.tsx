@@ -27,8 +27,8 @@ export const Hero = () => {
         {/* Traditional ink wash gradient */}
         <div className="absolute inset-0 ink-wash" />
         
-        {/* NEW: Color theory overlay - triadic harmony visualization */}
-        <div className="absolute inset-0 color-theory-overlay" />
+        {/* Triadic harmony radial glow behind title - THE KEY BEAUTY ENHANCER */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_45%,hsl(var(--gold)_/_0.08)_0%,hsl(var(--gold-triadic-1)_/_0.04)_40%,hsl(var(--gold-triadic-2)_/_0.04)_70%,transparent_100%)] animate-breathe-soft" />
         
         {/* Very faint grid */}
         <div className="absolute inset-0 grid-veil" />
@@ -42,10 +42,10 @@ export const Hero = () => {
         <div className="glow-ambient glow-sakura w-[400px] h-[400px] top-[35%] left-[25%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
         <div className="glow-ambient glow-matcha w-[350px] h-[350px] top-[60%] right-[30%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-1s" }} />
         
-        {/* NEW: Gold accent glows - triadic harmony visualization */}
-        <div className="glow-ambient glow-gold w-[450px] h-[450px] top-[20%] left-[50%] animate-breathe-soft" style={{ animationDelay: "-3s" }} />
-        <div className="glow-ambient glow-gold-triadic-1 w-[350px] h-[350px] top-[50%] right-[15%] animate-breathe-soft" style={{ animationDelay: "-5s" }} />
-        <div className="glow-ambient glow-gold-triadic-2 w-[300px] h-[300px] bottom-[25%] left-[20%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-2.5s" }} />
+        {/* Triadic harmony glows - THE COLOR THEORY BEAUTY */}
+        <div className="glow-ambient glow-gold w-[500px] h-[500px] top-[20%] left-[50%] -translate-x-1/2 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
+        <div className="glow-ambient glow-gold-triadic-1 w-[400px] h-[400px] top-[50%] right-[10%] animate-breathe-soft" style={{ animationDelay: "-5s" }} />
+        <div className="glow-ambient glow-gold-triadic-2 w-[350px] h-[350px] bottom-[20%] left-[15%] animate-breathe-soft" style={{ animationDelay: "-2.5s" }} />
         
         {/* Floating sakura petals */}
         <div className="absolute top-[-5%] left-[10%] w-[30px] h-[30px] rounded-full bg-sakura/20 animate-petal-fall" style={{ animationDelay: "0s", animationDuration: "12s" }} />
@@ -81,13 +81,16 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Enhanced main title with shimmer effect */}
+        {/* Enhanced main title with triadic color harmony glow */}
         <h1
           className="font-display text-[clamp(4.5rem,15vw,11rem)] font-light leading-[0.9] tracking-[-0.05em] text-kuro/95 dark:text-shiro/95 mb-12 animate-fade-up opacity-0 relative"
           style={{ animationDelay: "300ms" }}
         >
+          {/* Triadic harmony glow behind the name */}
+          <span className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_50%,hsl(var(--gold)_/_0.12)_0%,hsl(var(--gold-triadic-1)_/_0.06)_35%,hsl(var(--gold-triadic-2)_/_0.06)_65%,transparent_100%)] blur-3xl -z-10 animate-breathe-soft" />
+          {/* Subtle shimmer accent */}
+          <span className="absolute -inset-4 bg-gradient-to-r from-gold/8 via-gold/15 to-gold/8 blur-xl opacity-0 animate-shimmer" />
           JAYANT
-          <span className="absolute -inset-4 bg-gradient-to-r from-gold/10 to-transparent blur-2xl opacity-0 animate-shimmer" />
         </h1>
 
         {/* Enhanced tagline - restrained */}
@@ -100,11 +103,15 @@ export const Hero = () => {
           </p>
         </div>
 
-        {/* Enhanced minimal divider with gold accent */}
-        <div className="flex items-center justify-center gap-4 mb-16 animate-fade-up opacity-0" style={{ animationDelay: "700ms" }}>
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-          <div className="w-1.5 h-1.5 rounded-full bg-gold/70" />
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+        {/* Enhanced triadic harmony divider with three color dots */}
+        <div className="flex items-center justify-center gap-3 mb-16 animate-fade-up opacity-0" style={{ animationDelay: "700ms" }}>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-gold/40 to-gold/70" />
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-gold-triadic-1/80" />
+            <div className="w-2 h-2 rounded-full bg-gold shadow-[0_0_12px_hsl(var(--gold)/0.6)]" />
+            <div className="w-1.5 h-1.5 rounded-full bg-gold-triadic-2/80" />
+          </div>
+          <div className="w-20 h-px bg-gradient-to-l from-transparent via-gold/40 to-gold/70" />
         </div>
 
         {/* Enhanced subtitle */}

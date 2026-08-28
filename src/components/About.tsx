@@ -16,18 +16,21 @@ export const About = () => {
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
-        {/* NEW: Color theory background art - triadic harmony */}
-        <div className="absolute inset-0 gold-triadic-pattern opacity-15" />
-        <div className="absolute inset-0 gold-analogous-pattern opacity-10" />
-        <div className="absolute inset-0 color-theory-overlay" />
+        {/* Triadic + Analogous harmony patterns - more visible */}
+        <div className="absolute inset-0 gold-triadic-pattern opacity-25" />
+        <div className="absolute inset-0 gold-analogous-pattern opacity-15" />
+        
+        {/* Triadic color theory radial overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,hsl(var(--gold)_/_0.06)_0%,transparent_60%),radial-gradient(ellipse_50%_40%_at_75%_65%,hsl(var(--gold-triadic-2)_/_0.05)_0%,transparent_60%)]" />
         
         {/* Enhanced ambient glows with gold */}
-        <div className="glow-ambient glow-ai w-[500px] h-[500px] top-[10%] right-[-10%] animate-breathe-soft" />
-        <div className="glow-ambient glow-beni w-[400px] h-[400px] bottom-[20%] left-[-10%] animate-breathe-soft" style={{ animationDelay: "-4s" }} />
+        <div className="glow-ambient glow-ai w-[500px] h-[500px] top-[10%] right-[-10%] opacity-40 animate-breathe-soft" />
+        <div className="glow-ambient glow-beni w-[400px] h-[400px] bottom-[20%] left-[-10%] opacity-30 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
         
-        {/* NEW: Gold ambient glows */}
-        <div className="glow-ambient glow-gold w-[350px] h-[350px] top-[50%] left-[50%] opacity-10 animate-breathe-soft" style={{ animationDelay: "-2s" }} />
-        <div className="glow-ambient glow-gold-triadic-1 w-[300px] h-[300px] top-[30%] right-[20%] opacity-8 animate-pulse-subtle" style={{ animationDelay: "-5s" }} />
+        {/* Stronger gold + triadic glows */}
+        <div className="glow-ambient glow-gold w-[400px] h-[400px] top-[30%] left-[20%] opacity-18 animate-breathe-soft" style={{ animationDelay: "-2s" }} />
+        <div className="glow-ambient glow-gold-triadic-1 w-[350px] h-[350px] top-[20%] right-[15%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-5s" }} />
+        <div className="glow-ambient glow-gold-triadic-2 w-[320px] h-[320px] bottom-[30%] left-[40%] opacity-12 animate-breathe-soft" style={{ animationDelay: "-3.5s" }} />
         
         <div className="absolute inset-0 grid-veil opacity-40" />
         <div className="absolute inset-0 paper-veil" />

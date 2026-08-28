@@ -380,7 +380,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: 
+    background:
       radial-gradient(circle at 25% 25%, hsl(var(--gold) / 0.1) 0%, transparent 50%),
       radial-gradient(circle at 75% 25%, hsl(var(--gold-triadic-1) / 0.1) 0%, transparent 50%),
       radial-gradient(circle at 25% 75%, hsl(var(--gold-triadic-2) / 0.1) 0%, transparent 50%),
@@ -388,6 +388,48 @@
     background-blend-mode: screen;
     opacity: 0.15;
   }
+  
+  /* Split-complementary harmony pattern */
+  .gold-split-complement-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='50' r='20' fill='%23ffffff' fill-opacity='0.025'/%3E%3Ccircle cx='70' cy='30' r='15' fill='%23ffffff' fill-opacity='0.02'/%3E%3Ccircle cx='70' cy='70' r='15' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px 100px;
+  }
+  
+  /* Tetradic (double complementary) harmony pattern */
+  .gold-tetradic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='35' height='35' fill='%23ffffff' fill-opacity='0.02'/%3E%3Crect x='55' y='10' width='35' height='35' fill='%23ffffff' fill-opacity='0.025'/%3E%3Crect x='10' y='55' width='35' height='35' fill='%23ffffff' fill-opacity='0.015'/%3E%3Crect x='55' y='55' width='35' height='35' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px 100px;
+  }
+  
+  /* Monochromatic harmony pattern - subtle value variations */
+  .gold-monochromatic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='25' fill='%23ffffff' fill-opacity='0.015'/%3E%3Ccircle cx='30' cy='30' r='18' fill='%23ffffff' fill-opacity='0.02'/%3E%3Ccircle cx='30' cy='30' r='12' fill='%23ffffff' fill-opacity='0.025'/%3E%3Ccircle cx='30' cy='30' r='6' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 60px 60px;
+  }
+  
+  /* Color temperature utilities */
+  .bg-warm { background-color: hsl(var(--gold) / 0.1); }
+  .bg-cool { background-color: hsl(var(--gold-complement) / 0.08); }
+  .bg-neutral { background-color: hsl(var(--koh) / 0.08); }
+  
+  /* Color theory wheel segment indicators */
+  .segment-gold { border-color: hsl(var(--gold) / 0.4); }
+  .segment-triadic-1 { border-color: hsl(var(--gold-triadic-1) / 0.4); }
+  .segment-triadic-2 { border-color: hsl(var(--gold-triadic-2) / 0.4); }
+  .segment-analogous-1 { border-color: hsl(var(--gold-analogous-1) / 0.4); }
+  .segment-analogous-2 { border-color: hsl(var(--gold-analogous-2) / 0.4); }
+  .segment-complement { border-color: hsl(var(--gold-complement) / 0.4); }
+  
+  /* HSL hue rotation utilities for color theory */
+  .hue-rotate-gold { filter: hue-rotate(-45deg); }
+  .hue-rotate-analogous-1 { filter: hue-rotate(30deg); }
+  .hue-rotate-analogous-2 { filter: hue-rotate(-30deg); }
+  .hue-rotate-triadic-1 { filter: hue-rotate(-120deg); }
+  .hue-rotate-triadic-2 { filter: hue-rotate(120deg); }
+  .hue-rotate-complement { filter: hue-rotate(180deg); }
 }
 
 /* Enhanced keyframes */
@@ -479,6 +521,16 @@
   75% { transform: translateY(10px) translateX(5px); }
 }
 
+@keyframes hueShift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(360deg); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Enhanced animation utilities */
 .animate-fade-up {
   animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -522,6 +574,14 @@
 
 .animate-wave-float {
   animation: waveFloat 20s ease-in-out infinite;
+}
+
+.animate-hue-shift {
+  animation: hueShift 30s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 60s linear infinite;
 }
 
 /* Scroll reveal - more restrained */
