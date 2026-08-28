@@ -3,8 +3,17 @@ import { useReveal } from "@/hooks/use-reveal";
 export const Mindset = () => {
   const ref = useReveal();
   return (
-    <section className="relative px-6 py-28 md:py-40">
-      <div className="absolute inset-0 bg-shiro/95 dark:bg-kuro/95" />
+    <section className="relative px-6 py-28 md:py-40 overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-shiro/95 dark:bg-kuro/95" />
+        
+        {/* Central glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-gradient-to-t from-beni/8 via-sakura/5 to-transparent blur-3xl" />
+        
+        {/* Orbs */}
+        <div className="floating-orb orb-sakura w-[500px] h-[500px] top-[-20%] left-[-15%] opacity-30 animate-float-orb" style={{ animationDelay: "-3s" }} />
+        <div className="floating-orb orb-koh w-[400px] h-[400px] bottom-[-20%] right-[-10%] opacity-25 animate-float-orb" style={{ animationDelay: "-7s", animationDuration: "26s" }} />
+      </div>
       
       <div className="relative max-w-4xl mx-auto">
         <div ref={ref} className="reveal">

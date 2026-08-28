@@ -1,4 +1,3 @@
-import { SectionMark } from "./SectionMark";
 import { useReveal } from "@/hooks/use-reveal";
 
 const lines = [
@@ -15,21 +14,31 @@ export const Vision = () => {
       id="vision"
       className="relative px-6 py-32 md:py-48 overflow-hidden"
     >
-      {/* Background with subtle pattern */}
+      {/* Background with circular patterns */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro to-shiro/90 dark:from-kuro dark:to-kuro/90" />
         
-        {/* Circular enso-like decoration */}
+        {/* Concentric circles - Enso inspired */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="w-[500px] h-[500px] rounded-full border border-beni/5 dark:border-beni/10" />
-          <div className="absolute inset-8 w-[484px] h-[484px] rounded-full border border-matcha/5 dark:border-matcha/10" />
-          <div className="absolute inset-16 w-[468px] h-[468px] rounded-full border border-ai/5 dark:border-ai/10" />
+          <div className="w-[600px] h-[600px] rounded-full border border-beni/10 dark:border-beni/15 animate-pulse-glow" />
+          <div className="absolute inset-[40px] w-[520px] h-[520px] rounded-full border border-matcha/8 dark:border-matcha/12 animate-pulse-glow" style={{ animationDelay: "2s" }} />
+          <div className="absolute inset-[80px] w-[440px] h-[440px] rounded-full border border-ai/6 dark:border-ai/10 animate-pulse-glow" style={{ animationDelay: "4s" }} />
         </div>
+        
+        {/* Floating orbs */}
+        <div className="floating-orb orb-beni w-[400px] h-[400px] top-[-10%] right-[-10%] opacity-35 animate-float-orb" style={{ animationDelay: "-5s" }} />
+        <div className="floating-orb orb-ai w-[350px] h-[350px] bottom-[-15%] left-[-10%] opacity-30 animate-float-orb" style={{ animationDelay: "-10s", animationDuration: "28s" }} />
       </div>
 
       <div ref={ref} className="reveal relative z-10 max-w-4xl mx-auto">
         <div className="flex flex-col items-center text-center">
-          <SectionMark number="07" label="Vision" className="mb-14" />
+          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-kuro/50 dark:text-shiro/50 mb-14">
+            <span className="font-mono text-beni/80 text-[10px]">07</span>
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+              <span>Vision</span>
+            </div>
+          </div>
 
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-light tracking-[-0.04em] text-kuro/95 dark:text-shiro/95 leading-[1.05] max-w-3xl">
             To be free to live as myself.

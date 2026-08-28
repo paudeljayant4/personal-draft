@@ -1,4 +1,3 @@
-import { SectionMark } from "./SectionMark";
 import { useReveal } from "@/hooks/use-reveal";
 import { Code2, Brain, Crown, Globe, Activity, BookOpen } from "lucide-react";
 
@@ -9,6 +8,7 @@ const interests = [
     Icon: Code2,
     jp: "技",
     jpMeaning: "Waza - Skill",
+    color: "orb-ai",
   },
   {
     title: "Mind",
@@ -16,6 +16,7 @@ const interests = [
     Icon: Brain,
     jp: "心",
     jpMeaning: "Kokoro - Heart",
+    color: "orb-sakura",
   },
   {
     title: "Strategy",
@@ -23,6 +24,7 @@ const interests = [
     Icon: Crown,
     jp: "戦",
     jpMeaning: "Sen - Battle",
+    color: "orb-koh",
   },
   {
     title: "World",
@@ -30,6 +32,7 @@ const interests = [
     Icon: Globe,
     jp: "界",
     jpMeaning: "Kai - World",
+    color: "orb-matcha",
   },
   {
     title: "Movement",
@@ -37,6 +40,7 @@ const interests = [
     Icon: Activity,
     jp: "動",
     jpMeaning: "Dō - Motion",
+    color: "orb-beni",
   },
   {
     title: "Stories",
@@ -44,6 +48,7 @@ const interests = [
     Icon: BookOpen,
     jp: "語",
     jpMeaning: "Go - Language",
+    color: "orb-sakura",
   },
 ];
 
@@ -55,7 +60,7 @@ const InterestCard = ({
   index: number;
 }) => {
   const ref = useReveal();
-  const { Icon, title, description, jp, jpMeaning } = interest;
+  const { Icon, title, description, jp, jpMeaning, color } = interest;
 
   return (
     <div
@@ -63,10 +68,13 @@ const InterestCard = ({
       className="reveal group"
       style={{ transitionDelay: `${(index % 3) * 100}ms` }}
     >
-      <div className="relative h-full p-8 rounded-2xl bg-shiro/80 dark:bg-kuro/80 backdrop-blur-sm border border-kuro/5 dark:border-shiro/10 transition-all duration-500 hover:border-beni/30 dark:hover:border-beni/30 hover:shadow-lg hover:shadow-beni/5 dark:hover:shadow-beni/10 hover:-translate-y-1">
+      <div className="relative h-full p-8 rounded-2xl glass-washi spatial-shadow transition-all duration-500 hover:spatial-shadow-hover hover:-translate-y-1 group-hover:border-beni/30 dark:group-hover:border-beni/30">
+        
+        {/* Background glow on hover */}
+        <div className={`absolute inset-0 rounded-2xl ${color} opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-2xl`} />
         
         {/* Japanese character watermark */}
-        <div className="absolute top-6 right-6 font-jp text-4xl text-beni/10 dark:text-beni/20 group-hover:text-beni/20 transition-colors duration-500">
+        <div className="absolute top-6 right-6 font-jp text-4xl text-beni/10 dark:text-beni/20 group-hover:text-beni/25 transition-colors duration-500">
           {jp}
         </div>
 
@@ -95,15 +103,28 @@ const InterestCard = ({
 export const Interests = () => {
   const ref = useReveal();
   return (
-    <section id="interests" className="relative px-6 py-28 md:py-40">
+    <section id="interests" className="relative px-6 py-28 md:py-40 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-shiro/95 dark:bg-kuro/95" />
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-shiro/95 dark:bg-kuro/95" />
+        
+        {/* Floating orbs scattered */}
+        <div className="floating-orb orb-sakura w-[500px] h-[500px] top-[-20%] left-[-10%] opacity-40 animate-float-orb" style={{ animationDelay: "-3s" }} />
+        <div className="floating-orb orb-ai w-[350px] h-[350px] bottom-[-10%] right-[-5%] opacity-35 animate-float-orb" style={{ animationDelay: "-7s", animationDuration: "24s" }} />
+        <div className="floating-orb orb-matcha w-[250px] h-[250px] top-[30%] right-[10%] opacity-25 animate-float-orb" style={{ animationDelay: "-11s", animationDuration: "20s" }} />
+      </div>
       
       <div className="relative max-w-6xl mx-auto">
         <div ref={ref} className="reveal">
           {/* Header */}
           <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-            <SectionMark number="03" label="Interests" className="mb-8" />
+            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-kuro/50 dark:text-shiro/50 mb-8">
+              <span className="font-mono text-beni/80 text-[10px]">03</span>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+                <span>Interests</span>
+              </div>
+            </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-[-0.03em] text-kuro/95 dark:text-shiro/95 leading-[1.1] max-w-2xl">
               Things that keep me curious.
             </h2>

@@ -1,4 +1,3 @@
-import { SectionMark } from "./SectionMark";
 import { useReveal } from "@/hooks/use-reveal";
 
 const words = [
@@ -11,16 +10,28 @@ const words = [
 export const Currently = () => {
   const ref = useReveal();
   return (
-    <section className="relative px-6 py-28 md:py-40">
+    <section className="relative px-6 py-28 md:py-40 overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/95 to-shiro dark:from-kuro dark:via-kuro/95 dark:to-kuro" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-sakura/5 dark:bg-sakura/5 blur-3xl" />
+        
+        {/* Large central sakura glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-sakura/10 dark:bg-sakura/8 blur-3xl animate-breathe" />
+        
+        {/* Scattered orbs */}
+        <div className="floating-orb orb-sakura w-[400px] h-[400px] top-[-10%] left-[30%] opacity-40 animate-float-orb" style={{ animationDelay: "-2s" }} />
+        <div className="floating-orb orb-matcha w-[300px] h-[300px] bottom-[20%] right-[10%] opacity-30 animate-float-orb" style={{ animationDelay: "-8s", animationDuration: "24s" }} />
       </div>
       
       <div className="relative max-w-5xl mx-auto">
         <div ref={ref} className="reveal">
           <div className="flex flex-col items-center text-center">
-            <SectionMark number="06" label="Now" className="mb-10" />
+            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-kuro/50 dark:text-shiro/50 mb-10">
+              <span className="font-mono text-beni/80 text-[10px]">06</span>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+                <span>Now</span>
+              </div>
+            </div>
 
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.02em] text-kuro/95 dark:text-shiro/95 mb-12">
               Right now.

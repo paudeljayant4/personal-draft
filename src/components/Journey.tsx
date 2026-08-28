@@ -1,4 +1,3 @@
-import { SectionMark } from "./SectionMark";
 import { useReveal } from "@/hooks/use-reveal";
 
 const experiences = [
@@ -67,7 +66,7 @@ const ExperienceItem = ({
 
         {/* Content */}
         <div className="md:col-span-9 md:pl-12 relative">
-          {/* Vertical line on desktop */}
+          {/* Vertical line */}
           <div className="hidden md:block absolute left-0 top-2 bottom-0 w-px bg-gradient-to-b from-beni/50 via-beni/20 to-transparent" />
 
           {/* Mobile timeline */}
@@ -99,13 +98,28 @@ const ExperienceItem = ({
 export const Journey = () => {
   const ref = useReveal();
   return (
-    <section id="journey" className="relative px-6 py-28 md:py-40">
-      <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/98 to-shiro dark:from-kuro dark:via-kuro/98 dark:to-kuro" />
+    <section id="journey" className="relative px-6 py-28 md:py-40 overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/98 to-shiro dark:from-kuro dark:via-kuro/98 dark:to-kuro" />
+        
+        {/* Atmospheric orbs */}
+        <div className="floating-orb orb-koh w-[400px] h-[400px] top-[10%] left-[-15%] opacity-30 animate-float-orb" style={{ animationDelay: "-4s" }} />
+        <div className="floating-orb orb-sakura w-[350px] h-[350px] bottom-[10%] right-[-10%] opacity-25 animate-float-orb" style={{ animationDelay: "-9s", animationDuration: "26s" }} />
+        
+        {/* Ink wash */}
+        <div className="absolute inset-0 ink-wash-top" />
+      </div>
       
       <div className="relative max-w-5xl mx-auto">
         <div ref={ref} className="reveal">
           <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-            <SectionMark number="04" label="Journey" className="mb-8" />
+            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-kuro/50 dark:text-shiro/50 mb-8">
+              <span className="font-mono text-beni/80 text-[10px]">04</span>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+                <span>Journey</span>
+              </div>
+            </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-[-0.03em] text-kuro/95 dark:text-shiro/95 leading-[1.1] max-w-2xl">
               The journey so far.
             </h2>
