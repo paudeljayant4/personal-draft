@@ -20,7 +20,7 @@ export const About = () => {
       <div className="relative max-w-5xl mx-auto">
         <div ref={ref} className="reveal">
           <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-start">
-            {/* Left column */}
+            {/* Left column - sticky label */}
             <div className="md:col-span-3 md:sticky md:top-32">
               <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-kuro/50 dark:text-shiro/50 mb-8">
                 <span className="font-mono text-beni/80 text-[10px]">02</span>
@@ -33,12 +33,13 @@ export const About = () => {
               <div className="mt-4 text-[10px] uppercase tracking-[0.2em] text-kuro/40 dark:text-shiro/40 font-mono">Person / Hito</div>
             </div>
 
-            {/* Right column */}
+            {/* Right column - content */}
             <div className="md:col-span-9 space-y-10 max-w-2xl">
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-[-0.03em] text-kuro/95 dark:text-shiro/95 leading-[1.1]">
                 A little about me.
               </h2>
 
+              {/* Decorative line */}
               <div className="w-12 h-0.5 bg-gradient-to-r from-beni to-beni/30 rounded-full" />
 
               <div className="space-y-6 text-base md:text-lg font-light text-kuro/70 dark:text-shiro/70 leading-[1.8]">
@@ -58,6 +59,7 @@ export const About = () => {
                 </p>
               </div>
 
+              {/* Japanese accent */}
               <div className="pt-6 font-jp text-sm text-kuro/40 dark:text-shiro/40 tracking-wide">
                 自分らしく — As oneself
               </div>
