@@ -7,7 +7,7 @@ const interests = [
     description: "Exploring technology, programming and building things.",
     Icon: Code2,
     jp: "技",
-    jpMeaning: "Waza - Skill",
+    jpMeaning: "Waza — Skill",
     color: "orb-ai",
   },
   {
@@ -15,7 +15,7 @@ const interests = [
     description: "Interested in psychology, human behaviour and how people think.",
     Icon: Brain,
     jp: "心",
-    jpMeaning: "Kokoro - Heart",
+    jpMeaning: "Kokoro — Heart",
     color: "orb-sakura",
   },
   {
@@ -23,7 +23,7 @@ const interests = [
     description: "Chess, problem solving and competitive thinking.",
     Icon: Crown,
     jp: "戦",
-    jpMeaning: "Sen - Battle",
+    jpMeaning: "Sen — Battle",
     color: "orb-koh",
   },
   {
@@ -31,7 +31,7 @@ const interests = [
     description: "Travelling, discovering cultures and understanding different perspectives.",
     Icon: Globe,
     jp: "界",
-    jpMeaning: "Kai - World",
+    jpMeaning: "Kai — World",
     color: "orb-matcha",
   },
   {
@@ -39,7 +39,7 @@ const interests = [
     description: "Football, fitness and staying active.",
     Icon: Activity,
     jp: "動",
-    jpMeaning: "Dō - Motion",
+    jpMeaning: "Dō — Motion",
     color: "orb-beni",
   },
   {
@@ -47,7 +47,7 @@ const interests = [
     description: "Books, anime, ideas and stories that offer different ways of seeing the world.",
     Icon: BookOpen,
     jp: "語",
-    jpMeaning: "Go - Language",
+    jpMeaning: "Go — Language",
     color: "orb-sakura",
   },
 ];
@@ -66,35 +66,35 @@ const InterestCard = ({
     <div
       ref={ref}
       className="reveal group"
-      style={{ transitionDelay: `${(index % 3) * 100}ms` }}
+      style={{ transitionDelay: `${(index % 3) * 120}ms` }}
     >
-      <div className="relative h-full p-8 rounded-2xl glass-washi spatial-shadow transition-all duration-500 hover:spatial-shadow-hover hover:-translate-y-1 group-hover:border-beni/30 dark:group-hover:border-beni/30">
+      <div className="relative h-full p-9 rounded-2xl glass-washi spatial-shadow transition-all duration-500 hover:spatial-shadow-hover hover:-translate-y-1.5 group-hover:border-beni/40 dark:group-hover:border-beni/40">
         
         {/* Background glow on hover */}
-        <div className={`absolute inset-0 rounded-2xl ${color} opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-2xl`} />
+        <div className={`absolute inset-0 rounded-2xl ${color} opacity-0 group-hover:opacity-35 transition-opacity duration-700 blur-2xl`} />
         
         {/* Japanese character watermark */}
-        <div className="absolute top-6 right-6 font-jp text-4xl text-beni/10 dark:text-beni/20 group-hover:text-beni/25 transition-colors duration-500">
+        <div className="absolute top-8 right-8 font-jp text-5xl text-beni/12 dark:text-beni/18 group-hover:text-beni/30 transition-colors duration-700">
           {jp}
         </div>
 
         {/* Icon container */}
-        <div className="relative mb-6 w-12 h-12 rounded-xl bg-kuro/5 dark:bg-shiro/10 flex items-center justify-center group-hover:bg-beni/10 transition-colors duration-500">
-          <Icon className="w-5 h-5 text-kuro/70 dark:text-shiro/70 group-hover:text-beni transition-colors duration-500" strokeWidth={1.5} />
+        <div className="relative mb-8 w-14 h-14 rounded-xl bg-kuro/5 dark:bg-shiro/12 flex items-center justify-center group-hover:bg-beni/12 transition-colors duration-500">
+          <Icon className="w-6 h-6 text-kuro/75 dark:text-shiro/75 group-hover:text-beni transition-colors duration-500" strokeWidth={1.5} />
         </div>
 
-        <h3 className="font-display text-2xl font-light tracking-[-0.02em] text-kuro/95 dark:text-shiro/95 mb-2">
+        <h3 className="font-display text-2xl font-light tracking-[-0.025em] text-kuro/95 dark:text-shiro/95 mb-3">
           {title}
         </h3>
         
-        <div className="font-jp text-xs text-beni/60 mb-4">{jpMeaning}</div>
+        <div className="font-jp text-xs text-beni/65 mb-5 tracking-wide">{jpMeaning}</div>
 
-        <p className="text-sm font-light text-kuro/60 dark:text-shiro/60 leading-relaxed">
+        <p className="text-sm font-light text-kuro/65 dark:text-shiro/65 leading-relaxed">
           {description}
         </p>
 
         {/* Hover accent line */}
-        <div className="mt-6 h-px w-0 bg-gradient-to-r from-beni to-transparent group-hover:w-16 transition-all duration-700" />
+        <div className="mt-8 h-px w-0 bg-gradient-to-r from-beni to-transparent group-hover:w-20 transition-all duration-700 ease-out" />
       </div>
     </div>
   );
@@ -103,38 +103,42 @@ const InterestCard = ({
 export const Interests = () => {
   const ref = useReveal();
   return (
-    <section id="interests" className="relative px-6 py-28 md:py-40 overflow-hidden">
+    <section id="interests" className="relative px-6 py-28 md:py-44 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-shiro/95 dark:bg-kuro/95" />
+        <div className="absolute inset-0 bg-shiro/96 dark:bg-kuro/96" />
         
         {/* Floating orbs scattered */}
-        <div className="floating-orb orb-sakura w-[500px] h-[500px] top-[-20%] left-[-10%] opacity-40 animate-float-orb" style={{ animationDelay: "-3s" }} />
-        <div className="floating-orb orb-ai w-[350px] h-[350px] bottom-[-10%] right-[-5%] opacity-35 animate-float-orb" style={{ animationDelay: "-7s", animationDuration: "24s" }} />
-        <div className="floating-orb orb-matcha w-[250px] h-[250px] top-[30%] right-[10%] opacity-25 animate-float-orb" style={{ animationDelay: "-11s", animationDuration: "20s" }} />
+        <div className="floating-orb orb-sakura w-[600px] h-[600px] top-[-25%] left-[-15%] opacity-35 animate-float-orb" style={{ animationDelay: "-4s" }} />
+        <div className="floating-orb orb-ai w-[450px] h-[450px] bottom-[-15%] right-[-10%] opacity-30 animate-float-orb" style={{ animationDelay: "-9s", animationDuration: "28s" }} />
+        <div className="floating-orb orb-matcha w-[350px] h-[350px] top-[25%] right-[5%] opacity-20 animate-float-orb" style={{ animationDelay: "-14s", animationDuration: "24s" }} />
+        <div className="floating-orb orb-koh w-[300px] h-[300px] bottom-[30%] left-[5%] opacity-18 animate-float-orb" style={{ animationDelay: "-7s", animationDuration: "32s" }} />
+        
+        {/* Grid texture */}
+        <div className="absolute inset-0 grid-texture opacity-20" />
       </div>
       
       <div className="relative max-w-6xl mx-auto">
         <div ref={ref} className="reveal">
           {/* Header */}
-          <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-kuro/50 dark:text-shiro/50 mb-8">
-              <span className="font-mono text-beni/80 text-[10px]">03</span>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+          <div className="flex flex-col items-center text-center mb-20 md:mb-28">
+            <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.25em] text-kuro/50 dark:text-shiro/50 mb-10">
+              <span className="font-mono text-beni/90 text-[10px]">03</span>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-px bg-gradient-to-r from-beni/70 to-transparent" />
                 <span>Interests</span>
               </div>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-[-0.03em] text-kuro/95 dark:text-shiro/95 leading-[1.1] max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-[-0.035em] text-kuro/95 dark:text-shiro/95 leading-[1.1] max-w-2xl">
               Things that keep me curious.
             </h2>
-            <p className="mt-6 font-jp text-sm text-kuro/50 dark:text-shiro/50">
+            <p className="mt-8 font-jp text-base text-kuro/50 dark:text-shiro/50 tracking-[0.1em]">
               好奇心 — Kiyoomi
             </p>
           </div>
 
           {/* Grid */}
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {interests.map((interest, index) => (
               <InterestCard key={interest.title} interest={interest} index={index} />
             ))}
