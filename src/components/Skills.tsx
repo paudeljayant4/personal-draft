@@ -13,30 +13,27 @@ const skills = [
 export const Skills = () => {
   const ref = useReveal();
   return (
-    <section className="relative px-6 py-28 md:py-44 overflow-hidden">
+    <section className="relative px-6 py-40 md:py-56 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-shiro/96 dark:bg-kuro/96" />
+        <div className="absolute inset-0 bg-shiro/98 dark:bg-kuro/98" />
         
-        {/* Floating orbs */}
-        <div className="floating-orb orb-matcha w-[600px] h-[600px] top-[-35%] right-[-25%] opacity-30 animate-float-orb" style={{ animationDelay: "-7s" }} />
-        <div className="floating-orb orb-ai w-[400px] h-[400px] bottom-[-25%] left-[15%] opacity-25 animate-float-orb" style={{ animationDelay: "-15s", animationDuration: "26s" }} />
-        <div className="floating-orb orb-sakura w-[350px] h-[350px] top-[20%] left-[30%] opacity-20 animate-float-orb" style={{ animationDelay: "-10s", animationDuration: "30s" }} />
+        <div className="glow-ambient glow-matcha w-[600px] h-[600px] top-[-20%] right-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
+        <div className="glow-ambient glow-ai w-[400px] h-[400px] bottom-[-15%] left-[10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-7s" }} />
         
-        {/* Grid texture */}
-        <div className="absolute inset-0 grid-texture opacity-20" />
+        <div className="absolute inset-0 grid-veil opacity-30" />
       </div>
       
       <div className="relative max-w-5xl mx-auto">
         <div ref={ref} className="reveal">
-          <div className="flex flex-col items-center text-center mb-16">
-            <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.25em] text-kuro/50 dark:text-shiro/50 mb-10">
-              <span className="font-mono text-beni/90 text-[10px]">05</span>
+          <div className="flex flex-col items-center text-center mb-20">
+            <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-kuro/45 dark:text-shiro/45 mb-12">
+              <span className="font-mono text-beni/80 text-[10px]">05</span>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-px bg-gradient-to-r from-beni/70 to-transparent" />
+                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
                 <span>Skills</span>
               </div>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-[-0.035em] text-kuro/95 dark:text-shiro/95 leading-[1.1] max-w-2xl">
+            <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-[-0.04em] text-kuro/95 dark:text-shiro/95 leading-[1.05] max-w-2xl">
               What I bring.
             </h2>
           </div>
@@ -49,14 +46,14 @@ export const Skills = () => {
                   key={skill.name}
                   ref={itemRef}
                   className="reveal group"
-                  style={{ transitionDelay: `${(i % 7) * 70}ms` }}
+                  style={{ transitionDelay: `${(i % 7) * 100}ms` }}
                 >
-                  <div className="relative px-6 py-4 rounded-full glass-washi spatial-shadow text-sm font-light text-kuro/85 dark:text-shiro/85 transition-all duration-500 hover:spatial-shadow-hover hover:-translate-y-1 hover:border-beni/50 dark:hover:border-beni/50 group-hover:text-beni dark:group-hover:text-beni">
-                    <span className="font-mono text-[10px] text-kuro/45 dark:text-shiro/45 mr-3">
+                  <div className="relative px-6 py-4 rounded-full bg-card/40 backdrop-blur-sm border border-border/40 text-sm font-light text-kuro/80 dark:text-shiro/80 transition-all duration-500 hover:border-beni/30 hover:-translate-y-0.5 group-hover:text-beni dark:group-hover:text-beni">
+                    <span className="font-mono text-[10px] text-kuro/40 dark:text-shiro/40 mr-3">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     {skill.name}
-                    <span className="ml-3 font-jp text-[10px] text-kuro/35 dark:text-shiro/35 group-hover:text-beni/60 transition-colors duration-500">
+                    <span className="ml-3 font-jp text-[10px] text-kuro/30 dark:text-shiro/30 group-hover:text-beni/50 transition-colors duration-500">
                       {skill.jp}
                     </span>
                   </div>
