@@ -1,24 +1,34 @@
 export const Hero = () => {
   return (
     <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
-      {/* Minimal atmospheric background */}
+      {/* Japanese art-inspired background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/98 to-shiro dark:from-kuro dark:via-kuro/98 dark:to-kuro" />
+        {/* Base gradient - warm paper */}
+        <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/98 to-shiro/95 dark:from-kuro dark:via-kuro/98 dark:to-kuro/95" />
         
-        {/* Single ink veil at top */}
-        <div className="absolute inset-0 ink-veil" />
+        {/* Japanese sakura pattern overlay */}
+        <div className="absolute inset-0 sakura-pattern" />
+        
+        {/* Ukiyo-e wave pattern */}
+        <div className="absolute inset-0 wave-pattern opacity-30" />
+        
+        {/* Sumi-e ink wash effect */}
+        <div className="absolute inset-0 sumi-e-wash" />
+        
+        {/* Traditional ink wash gradient */}
+        <div className="absolute inset-0 ink-wash" />
         
         {/* Very faint grid */}
         <div className="absolute inset-0 grid-veil" />
+        
+        {/* Paper texture overlay */}
+        <div className="absolute inset-0 paper-veil" />
         
         {/* Single ambient glow - beni, very subtle */}
         <div className="glow-ambient glow-beni w-[500px] h-[500px] top-[20%] right-[15%] animate-breathe-soft" />
         
         {/* Single ai glow - bottom left */}
         <div className="glow-ambient glow-ai w-[400px] h-[400px] bottom-[10%] left-[10%] animate-breathe-soft" style={{ animationDelay: "-3s" }} />
-        
-        {/* Paper veil texture */}
-        <div className="absolute inset-0 paper-veil" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
