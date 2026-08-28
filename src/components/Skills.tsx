@@ -25,14 +25,14 @@ export const Skills = () => {
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
-        {/* NEW: Color theory background art - complementary harmony */
+        {/* NEW: Color theory background art - complementary harmony */}
         <div className="absolute inset-0 gold-complement-pattern opacity-15" />
         <div className="absolute inset-0 color-theory-overlay" />
         
         <div className="glow-ambient glow-matcha w-[600px] h-[600px] top-[-20%] right-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
         <div className="glow-ambient glow-ai w-[400px] h-[400px] bottom-[-15%] left-[10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-7s" }} />
         
-        {/* NEW: Gold ambient glows */
+        {/* NEW: Gold ambient glows */}
         <div className="glow-ambient glow-gold w-[350px] h-[350px] top-[40%] left-[30%] opacity-15 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
         <div className="glow-ambient glow-gold-triadic-1 w-[250px] h-[250px] bottom-[20%] right-[25%] opacity-10 animate-pulse-subtle" style={{ animationDelay: "-6s" }} />
         

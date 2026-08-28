@@ -22,8 +22,13 @@ export const Currently = () => {
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
-        {/* Single central glow */}
-        <div className="glow-ambient glow-sakura w-[700px] h-[700px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 animate-breathe-soft" />
+        {/* NEW: Color theory background art - analogous harmony */}
+        <div className="absolute inset-0 gold-analogous-pattern opacity-8" />
+        <div className="absolute inset-0 color-theory-overlay" />
+        
+        {/* Single central glow with gold */}
+        <div className="glow-ambient glow-gold w-[700px] h-[700px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25 animate-breathe-soft" />
+        <div className="glow-ambient glow-sakura w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
         
         <div className="absolute inset-0 grid-veil opacity-20" />
         <div className="absolute inset-0 paper-veil" />
@@ -33,9 +38,9 @@ export const Currently = () => {
         <div ref={ref} className="reveal">
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-kuro/45 dark:text-shiro/45 mb-14">
-              <span className="font-mono text-beni/80 text-[10px]">06</span>
+              <span className="font-mono text-gold/80 text-[10px]">06</span>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+                <div className="w-6 h-px bg-gradient-to-r from-gold/60 to-transparent" />
                 <span>Now</span>
               </div>
             </div>
@@ -54,11 +59,11 @@ export const Currently = () => {
                   <span className="font-display text-3xl md:text-5xl font-light tracking-[-0.03em] text-kuro/92 dark:text-shiro/92">
                     {word.en}
                   </span>
-                  <span className="font-jp text-base text-beni/50 group-hover:text-beni/80 transition-colors duration-500">
+                  <span className="font-jp text-base text-gold/50 group-hover:text-gold/80 transition-colors duration-500">
                     {word.jp}
                   </span>
                   {i < words.length - 1 && (
-                    <span className="text-beni/35 ml-4 hidden sm:inline text-lg">·</span>
+                    <span className="text-gold/35 ml-4 hidden sm:inline text-lg">·</span>
                   )}
                 </span>
               ))}

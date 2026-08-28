@@ -50,35 +50,35 @@ const ExperienceItem = ({
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="md:grid md:grid-cols-12 md:gap-12 items-baseline">
-        {/* Enhanced timeline marker */}
+        {/* Enhanced timeline marker with gold */}
         <div className="hidden md:flex md:col-span-3 items-center justify-end gap-6">
           <div className="text-right">
             <div className="font-mono text-xs text-kuro/55 dark:text-shiro/55 tracking-wider">
               {exp.period}
             </div>
-            <div className="mt-2 font-jp text-xs text-beni/70 tracking-wide">{exp.jp}</div>
+            <div className="mt-2 font-jp text-xs text-gold/70 tracking-wide">{exp.jp}</div>
           </div>
           <div className="relative w-3 h-3 flex-shrink-0">
-            <div className="absolute inset-0 rounded-full bg-beni/30" />
-            <div className="absolute inset-[2px] rounded-full bg-beni/80" />
+            <div className="absolute inset-0 rounded-full bg-gold/30" />
+            <div className="absolute inset-[2px] rounded-full bg-gold/80" />
           </div>
         </div>
 
         {/* Enhanced content */}
         <div className="md:col-span-9 md:pl-16 relative">
-          {/* Enhanced vertical line */}
-          <div className="hidden md:block absolute left-4 top-3 bottom-0 w-px bg-gradient-to-b from-beni/40 via-beni/15 to-transparent" />
+          {/* Enhanced vertical line with gold */}
+          <div className="hidden md:block absolute left-4 top-3 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/15 to-transparent" />
 
           {/* Mobile timeline */}
           <div className="flex md:hidden items-center gap-4 mb-5">
-            <div className="w-2.5 h-2.5 rounded-full bg-beni/80" />
+            <div className="w-2.5 h-2.5 rounded-full bg-gold/80" />
             <div className="font-mono text-xs text-kuro/55 dark:text-shiro/55">
               {exp.period}
             </div>
           </div>
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-beni/70 font-mono">{exp.tag}</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-gold/70 font-mono">{exp.tag}</span>
             <span className="font-jp text-xs text-kuro/40 dark:text-shiro/40">{exp.jp}</span>
           </div>
 
@@ -110,8 +110,16 @@ export const Journey = () => {
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
+        {/* NEW: Color theory background art - triadic harmony */}
+        <div className="absolute inset-0 gold-triadic-pattern opacity-12" />
+        <div className="absolute inset-0 color-theory-overlay" />
+        
         <div className="glow-ambient glow-koh w-[500px] h-[500px] top-[5%] left-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
         <div className="glow-ambient glow-sakura w-[450px] h-[450px] bottom-[5%] right-[-10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-6s" }} />
+        
+        {/* NEW: Gold ambient glows */}
+        <div className="glow-ambient glow-gold w-[400px] h-[400px] top-[40%] left-[30%] opacity-15 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
+        <div className="glow-ambient glow-gold-triadic-2 w-[300px] h-[300px] bottom-[30%] right-[20%] opacity-12 animate-pulse-subtle" style={{ animationDelay: "-7s" }} />
         
         <div className="absolute inset-0 grid-veil opacity-30" />
         <div className="absolute inset-0 paper-veil" />
@@ -121,9 +129,9 @@ export const Journey = () => {
         <div ref={ref} className="reveal">
           <div className="flex flex-col items-center text-center mb-24 md:mb-32">
             <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-kuro/45 dark:text-shiro/45 mb-12">
-              <span className="font-mono text-beni/80 text-[10px]">04</span>
+              <span className="font-mono text-gold/80 text-[10px]">04</span>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+                <div className="w-6 h-px bg-gradient-to-r from-gold/60 to-transparent" />
                 <span>Journey</span>
               </div>
             </div>

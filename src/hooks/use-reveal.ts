@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 
-export function useReveal() {
-  const ref = useRef<HTMLDivElement>(null);
+export function useReveal<T extends HTMLElement = HTMLDivElement>(): RefObject<T> {
+  const ref = useRef<T>(null);
 
   useEffect(() => {
     const el = ref.current;

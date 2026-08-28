@@ -25,23 +25,31 @@ export const Vision = () => {
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
-        {/* Single enso circle - very subtle */}
+        {/* NEW: Color theory background art - complementary harmony */}
+        <div className="absolute inset-0 gold-complement-pattern opacity-10" />
+        <div className="absolute inset-0 color-theory-overlay" />
+        
+        {/* Single enso circle - very subtle with gold */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="w-[600px] h-[600px] rounded-full border border-beni/8 dark:border-beni/12" />
+          <div className="w-[600px] h-[600px] rounded-full border border-gold/8 dark:border-gold/12" />
           <div className="absolute inset-[80px] w-[440px] h-[440px] rounded-full border border-matcha/6 dark:border-matcha/10" />
         </div>
         
         <div className="glow-ambient glow-beni w-[500px] h-[500px] top-[-10%] right-[-10%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
         <div className="glow-ambient glow-ai w-[450px] h-[450px] bottom-[-15%] left-[-10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-6s" }} />
         
+        {/* NEW: Gold ambient glows */}
+        <div className="glow-ambient glow-gold w-[400px] h-[400px] top-[20%] left-[25%] opacity-18 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
+        <div className="glow-ambient glow-gold-complement w-[350px] h-[350px] bottom-[20%] right-[20%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-7s" }} />
+        
         <div className="absolute inset-0 grid-veil opacity-20" />
       </div>
 
       <div ref={ref} className="reveal relative z-10 max-w-4xl mx-auto text-center">
         <div className="flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.3em] text-kuro/45 dark:text-shiro/45 mb-18">
-          <span className="font-mono text-beni/80 text-[10px]">07</span>
+          <span className="font-mono text-gold/80 text-[10px]">07</span>
           <div className="flex items-center gap-3">
-            <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+            <div className="w-6 h-px bg-gradient-to-r from-gold/60 to-transparent" />
             <span>Vision</span>
           </div>
         </div>
@@ -51,9 +59,9 @@ export const Vision = () => {
         </h2>
 
         <div className="mt-24 flex items-center justify-center gap-5">
-          <div className="w-12 h-px bg-beni/40" />
-          <div className="w-2 h-2 rounded-full bg-beni/60" />
-          <div className="w-12 h-px bg-beni/40" />
+          <div className="w-12 h-px bg-gold/40" />
+          <div className="w-2 h-2 rounded-full bg-gold/60" />
+          <div className="w-12 h-px bg-gold/40" />
         </div>
 
         <div className="mt-24 space-y-12 max-w-xl mx-auto">
@@ -63,7 +71,7 @@ export const Vision = () => {
               className="reveal font-light text-base md:text-lg text-kuro/70 dark:text-shiro/70 leading-relaxed"
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <span className="font-jp text-beni/60 mr-4 text-lg">{line.jp}</span>
+              <span className="font-jp text-gold/60 mr-4 text-lg">{line.jp}</span>
               {line.text}
             </p>
           ))}

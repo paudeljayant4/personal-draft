@@ -62,33 +62,33 @@ const InterestCard = ({
       className="reveal group"
       style={{ transitionDelay: `${(index % 3) * 150}ms` }}
     >
-      <div className="relative h-full p-10 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 transition-all duration-700 hover:border-beni/30 hover:-translate-y-1">
+      <div className="relative h-full p-10 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 transition-all duration-700 hover:border-gold/30 hover:-translate-y-1">
         
-        {/* Enhanced hover glow */}
-        <div className="glow-ambient glow-beni w-full h-full inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ position: "absolute" }} />
+        {/* Enhanced hover glow with gold */}
+        <div className="glow-ambient glow-gold w-full h-full inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ position: "absolute" }} />
         
-        {/* Japanese character - very subtle */}
-        <div className="absolute top-8 right-8 font-jp text-4xl text-beni/8 dark:text-beni/12 group-hover:text-beni/20 transition-colors duration-700 font-light">
+        {/* Japanese character - very subtle with gold tint */}
+        <div className="absolute top-8 right-8 font-jp text-4xl text-gold/8 dark:text-gold/12 group-hover:text-gold/20 transition-colors duration-700 font-light">
           {jp}
         </div>
 
         {/* Icon - minimal */}
-        <div className="relative mb-8 w-12 h-12 rounded-lg bg-kuro/5 dark:bg-shiro/10 flex items-center justify-center group-hover:bg-beni/10 transition-colors duration-500">
-          <Icon className="w-5 h-5 text-kuro/70 dark:text-shiro/70 group-hover:text-beni transition-colors duration-500" strokeWidth={1.5} />
+        <div className="relative mb-8 w-12 h-12 rounded-lg bg-kuro/5 dark:bg-shiro/10 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
+          <Icon className="w-5 h-5 text-kuro/70 dark:text-shiro/70 group-hover:text-gold transition-colors duration-500" strokeWidth={1.5} />
         </div>
 
         <h3 className="font-display text-2xl font-light tracking-[-0.02em] text-kuro/95 dark:text-shiro/95 mb-2">
           {title}
         </h3>
         
-        <div className="font-jp text-xs text-beni/60 mb-5 tracking-wide">{jpMeaning}</div>
+        <div className="font-jp text-xs text-gold/60 mb-5 tracking-wide">{jpMeaning}</div>
 
         <p className="text-sm font-light text-kuro/60 dark:text-shiro/60 leading-relaxed">
           {description}
         </p>
 
-        {/* Enhanced hover accent */}
-        <div className="mt-8 h-px w-0 bg-gradient-to-r from-beni to-transparent group-hover:w-16 transition-all duration-700 ease-out" />
+        {/* Enhanced hover accent with gold */}
+        <div className="mt-8 h-px w-0 bg-gradient-to-r from-gold to-transparent group-hover:w-16 transition-all duration-700 ease-out" />
       </div>
     </div>
   );
@@ -109,9 +109,17 @@ export const Interests = () => {
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
-        {/* Enhanced ambient glows */}
+        {/* NEW: Color theory background art - analogous harmony */}
+        <div className="absolute inset-0 gold-analogous-pattern opacity-12" />
+        <div className="absolute inset-0 color-theory-overlay" />
+        
+        {/* Enhanced ambient glows with gold */}
         <div className="glow-ambient glow-sakura w-[600px] h-[600px] top-[-15%] left-[-10%] opacity-40 animate-breathe-soft" style={{ animationDelay: "-2s" }} />
         <div className="glow-ambient glow-ai w-[500px] h-[500px] bottom-[-10%] right-[-10%] opacity-30 animate-breathe-soft" style={{ animationDelay: "-5s" }} />
+        
+        {/* NEW: Gold ambient glows */}
+        <div className="glow-ambient glow-gold w-[400px] h-[400px] top-[30%] right-[20%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
+        <div className="glow-ambient glow-gold-analogous-2 w-[300px] h-[300px] bottom-[25%] left-[15%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-6s" }} />
         
         <div className="absolute inset-0 grid-veil opacity-30" />
       </div>
@@ -120,9 +128,9 @@ export const Interests = () => {
         <div ref={ref} className="reveal">
           <div className="flex flex-col items-center text-center mb-24 md:mb-32">
             <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-kuro/45 dark:text-shiro/45 mb-12">
-              <span className="font-mono text-beni/80 text-[10px]">03</span>
+              <span className="font-mono text-gold/80 text-[10px]">03</span>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+                <div className="w-6 h-px bg-gradient-to-r from-gold/60 to-transparent" />
                 <span>Interests</span>
               </div>
             </div>
