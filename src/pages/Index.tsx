@@ -9,11 +9,13 @@ import { Mindset } from "@/components/Mindset";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
@@ -25,8 +27,8 @@ const Index = () => {
         <Vision />
         <Mindset />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
       <MadeWithDyad />
     </div>
   );
