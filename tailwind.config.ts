@@ -52,21 +52,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Japanese color palette
+        kuro: "hsl(var(--kuro))",
+        shiro: "hsl(var(--shiro))",
+        ai: "hsl(var(--ai))",
+        beni: "hsl(var(--beni))",
+        sakura: "hsl(var(--sakura))",
+        matcha: "hsl(var(--matcha))",
+        karashi: "hsl(var(--karashi))",
+        kon: "hsl(var(--kon))",
+        mizugaki: "hsl(var(--mizugaki))",
+        usuzumi: "hsl(var(--usuzumi))",
         vermilion: {
           DEFAULT: "hsl(var(--vermilion))",
           500: "hsl(var(--vermilion))",
-        },
-        ink: "#0a0a0a",
-        paper: "#f7f4ef",
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
         },
       },
       borderRadius: {
@@ -75,27 +74,19 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"],
-        serif: ['"Cormorant Garamond"', "Georgia", "serif"],
-        jp: ['"Noto Serif JP"', "serif"],
+        sans: ['"Zen Kaku Gothic New"', '"Hiragino Kaku Gothic ProN"', '"Noto Sans JP"', "system-ui", "sans-serif"],
+        display: ['"Zen Kaku Gothic New"', "system-ui", "sans-serif"],
+        mincho: ['"Shippori Mincho"', '"Hiragino Mincho ProN"', '"Yu Mincho"', "Georgia", "serif"],
+        jp: ['"Shippori Mincho"', '"Hiragino Mincho ProN"', '"Yu Mincho"', "serif"],
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

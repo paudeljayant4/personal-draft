@@ -4,91 +4,112 @@
 
 @layer base {
   :root {
-    --background: 30 25% 97%;
-    --foreground: 0 0% 8%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
-
-    --primary: 0 0% 8%;
-    --primary-foreground: 30 25% 97%;
-
-    --secondary: 30 15% 94%;
-    --secondary-foreground: 0 0% 8%;
-
-    --muted: 30 15% 94%;
-    --muted-foreground: 0 0% 40%;
-
-    --accent: 30 15% 94%;
-    --accent-foreground: 0 0% 8%;
-
-    --destructive: 0 84.2% 60.2%;
+    /* Traditional Japanese Palette - Paper & Nature */
+    --background: 40 30% 96%;           /* Kinari - unbleached silk white */
+    --foreground: 30 15% 12%;          /* Sumi - ink black */
+    
+    /* Paper & Surface */
+    --card: 40 25% 98%;                /* Shiro - white paper */
+    --card-foreground: 30 15% 12%;
+    
+    --popover: 40 25% 98%;
+    --popover-foreground: 30 15% 12%;
+    
+    /* Primary - Aizome (Indigo) */
+    --primary: 230 35% 25%;            /* Aizome - traditional indigo */
+    --primary-foreground: 40 30% 96%;
+    
+    /* Secondary - Matcha */
+    --secondary: 90 30% 40%;           /* Matcha - green tea */
+    --secondary-foreground: 40 30% 96%;
+    
+    /* Muted tones */
+    --muted: 40 15% 90%;               /* Shiro-nezumi - white gray */
+    --muted-foreground: 30 10% 45%;    /* Sumi-nezumi - ink gray */
+    
+    /* Accent - Beni (Vermillion) */
+    --accent: 15 75% 50%;              /* Beni - traditional vermillion */
+    --accent-foreground: 40 30% 96%;
+    
+    /* Borders & Inputs */
+    --border: 30 20% 85%;              /* Subtle warm gray */
+    --input: 30 20% 88%;
+    --ring: 230 35% 25%;
+    
+    /* UI Elements */
+    --radius: 0.25rem;
+    --vermilion: 15 75% 50%;           /* Beni */
+    
+    /* Japanese Color System */
+    --ai: 230 35% 25%;                 /* Indigo - dignity, depth */
+    --beni: 15 75% 50%;                /* Vermillion - life, energy */
+    --sakura: 350 60% 88%;             /* Cherry blossom - transience */
+    --matcha: 90 30% 40%;              /* Green tea - calm, nature */
+    --kuro: 30 10% 8%;                 /* Deep black */
+    --shiro: 40 30% 96%;               /* Pure white */
+    --karashi: 45 70% 55%;             /* Yellow mustard - warmth */
+    --kon: 230 45% 35%;                /* Deep indigo */
+    --mizugaki: 180 40% 70%;           /* Pale blue-green */
+    --usuzumi: 0 0% 75%;               /* Pale gray */
+    
+    /* Semantic */
+    --destructive: 0 60% 45%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 30 10% 88%;
-    --input: 30 10% 88%;
-    --ring: 0 0% 8%;
-
-    --radius: 0.5rem;
-
-    --vermilion: 5 65% 58%;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Sidebar */
+    --sidebar-background: 40 30% 96%;
+    --sidebar-foreground: 30 15% 12%;
+    --sidebar-primary: 230 35% 25%;
+    --sidebar-primary-foreground: 40 30% 96%;
+    --sidebar-accent: 40 15% 90%;
+    --sidebar-accent-foreground: 30 15% 12%;
+    --sidebar-border: 30 20% 85%;
   }
 
   .dark {
-    --background: 0 0% 6%;
-    --foreground: 30 15% 92%;
-
-    --card: 0 0% 9%;
-    --card-foreground: 30 15% 92%;
-
-    --popover: 0 0% 9%;
-    --popover-foreground: 30 15% 92%;
-
-    --primary: 30 15% 92%;
-    --primary-foreground: 0 0% 8%;
-
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 30 15% 92%;
-
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 0 0% 14%;
-    --accent-foreground: 30 15% 92%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 30 15% 92%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Night mode - inspired by Japanese nights */
+    --background: 30 10% 8%;            /* Deep sumi */
+    --foreground: 40 20% 92%;           /* Kinari */
+    
+    --card: 30 10% 12%;
+    --card-foreground: 40 20% 92%;
+    
+    --popover: 30 10% 12%;
+    --popover-foreground: 40 20% 92%;
+    
+    --primary: 200 60% 65%;             /* Aogai - blue shell */
+    --primary-foreground: 30 10% 8%;
+    
+    --secondary: 90 25% 30%;           /* Dark matcha */
+    --secondary-foreground: 40 20% 92%;
+    
+    --muted: 30 10% 20%;
+    --muted-foreground: 40 10% 60%;
+    
+    --accent: 15 65% 55%;              /* Lighter beni */
+    --accent-foreground: 30 10% 8%;
+    
+    --border: 30 10% 20%;
+    --input: 30 10% 22%;
+    --ring: 200 60% 65%;
+    
+    --vermilion: 15 65% 55%;
+    
+    /* Dark Japanese colors */
+    --ai: 200 40% 45%;
+    --beni: 15 65% 55%;
+    --sakura: 350 40% 60%;
+    --matcha: 90 30% 35%;
+    --kuro: 30 10% 8%;
+    --shiro: 40 20% 92%;
+    
+    --sidebar-background: 30 10% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 200 60% 65%;
+    --sidebar-primary-foreground: 30 10% 8%;
+    --sidebar-accent: 30 10% 18%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 30 10% 20%;
   }
 }
 
@@ -102,71 +123,176 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv11";
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02";
+  }
+  
+  /* Custom text selection */
+  ::selection {
+    background: hsl(var(--sakura) / 0.3);
+    color: hsl(var(--foreground));
   }
 }
 
 @layer utilities {
+  /* Japanese typography */
   .font-display {
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
-    font-feature-settings: "ss01", "cv01", "cv11";
-    letter-spacing: -0.04em;
+    font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+    font-feature-settings: "pkna";
+    letter-spacing: -0.03em;
   }
-
+  
+  .font-mincho {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  }
+  
+  .font-jp {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  }
+  
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Japanese color utilities */
+  .text-kuro { color: hsl(var(--kuro)); }
+  .text-shiro { color: hsl(var(--shiro)); }
+  .text-ai { color: hsl(var(--ai)); }
+  .text-beni { color: hsl(var(--beni)); }
+  .text-sakura { color: hsl(var(--sakura)); }
+  .text-matcha { color: hsl(var(--matcha)); }
+  .text-karashi { color: hsl(var(--karashi)); }
+  .text-kon { color: hsl(var(--kon)); }
+  .text-mizugaki { color: hsl(var(--mizugaki)); }
+  .text-usuzumi { color: hsl(var(--usuzumi)); }
+  
+  .bg-kuro { background-color: hsl(var(--kuro)); }
+  .bg-shiro { background-color: hsl(var(--shiro)); }
+  .bg-ai { background-color: hsl(var(--ai)); }
+  .bg-beni { background-color: hsl(var(--beni)); }
+  .bg-sakura { background-color: hsl(var(--sakura)); }
+  .bg-matcha { background-color: hsl(var(--matcha)); }
+  .bg-karashi { background-color: hsl(var(--karashi)); }
+  .bg-kon { background-color: hsl(var(--kon)); }
+  .bg-mizugaki { background-color: hsl(var(--mizugaki)); }
+  .bg-usuzumi { background-color: hsl(var(--usuzumi)); }
 
-  .glass {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+  /* Wabi-sabi textures */
+  .paper-texture {
+    background-image: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-blend-mode: soft-light;
+    opacity: 0.03;
   }
-
-  .dark .glass {
-    background: rgba(20, 20, 20, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .ink-texture {
-    background-image: radial-gradient(
-      ellipse at top,
-      rgba(0, 0, 0, 0.03) 0%,
+  
+  .ink-wash {
+    background: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      hsl(var(--ai) / 0.04) 0%,
       transparent 60%
     );
   }
-
-  .brush-line {
+  
+  .sakura-fall {
+    background: radial-gradient(
+      circle at 20% 30%,
+      hsl(var(--sakura) / 0.08) 0%,
+      transparent 40%
+    );
+  }
+  
+  /* Glass morphism - Japanese inspired */
+  .glass-washi {
+    background: rgba(255, 253, 248, 0.7);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 253, 248, 0.4);
+  }
+  
+  .dark .glass-washi {
+    background: rgba(30, 28, 25, 0.7);
+    border: 1px solid rgba(255, 253, 248, 0.06);
+  }
+  
+  /* Japanese brush stroke effect */
+  .brush-stroke {
     position: relative;
   }
-
-  .brush-line::after {
+  
+  .brush-stroke::after {
     content: "";
     position: absolute;
-    bottom: -8px;
+    bottom: -4px;
     left: 0;
-    width: 40px;
-    height: 1px;
-    background: hsl(var(--vermilion));
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--beni)) 0%,
+      hsl(var(--beni) / 0.3) 70%,
+      transparent 100%
+    );
+    transform-origin: left;
+  }
+  
+  /* Ink drop animation */
+  .ink-drop {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ink-drop::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      hsl(var(--kuro) / 0.03) 0%,
+      transparent 70%
+    );
+    transform: translate(-50%, -50%) scale(0);
+    animation: inkExpand 8s ease-in-out infinite;
+  }
+  
+  /* Scroll indicator - falling leaf style */
+  .falling-leaf {
+    animation: fall 3s ease-in-out infinite;
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
+/* Keyframe animations */
+@keyframes fall {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(8px) rotate(5deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes inkExpand {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
   }
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -175,57 +301,70 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes kenBurns {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-  100% {
-    transform: scale(1.1) translate(-1%, -1%);
-  }
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes drift {
-  0%,
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(20px, -15px); }
+  66% { transform: translate(-15px, 10px); }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes petal {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
   100% {
-    transform: translate(0, 0);
-  }
-  33% {
-    transform: translate(30px, -20px);
-  }
-  66% {
-    transform: translate(-20px, 20px);
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
+/* Animation utilities */
 .animate-fade-up {
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-in {
-  animation: fadeIn 1.2s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
 }
 
 .animate-drift {
-  animation: drift 20s ease-in-out infinite;
+  animation: drift 15s ease-in-out infinite;
 }
 
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
@@ -233,22 +372,14 @@
   transform: translateY(0);
 }
 
-.reveal-delay-1 {
-  transition-delay: 0.1s;
-}
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-.reveal-delay-4 {
-  transition-delay: 0.4s;
-}
-.reveal-delay-5 {
-  transition-delay: 0.5s;
-}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
 
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -256,11 +387,28 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
-
+  
   .reveal {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--usuzumi));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
 }

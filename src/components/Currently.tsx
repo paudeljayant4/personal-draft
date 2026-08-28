@@ -1,42 +1,62 @@
 import { SectionMark } from "./SectionMark";
 import { useReveal } from "@/hooks/use-reveal";
 
-const words = ["Learning.", "Building.", "Exploring.", "Becoming."];
+const words = [
+  { en: "Learning.", jp: "学" },
+  { en: "Building.", jp: "造" },
+  { en: "Exploring.", jp: "探" },
+  { en: "Becoming.", jp: "成" },
+];
 
 export const Currently = () => {
   const ref = useReveal();
   return (
-    <section className="relative px-6 py-32 md:py-40 max-w-5xl mx-auto">
-      <div ref={ref} className="reveal">
-        <div className="flex flex-col items-center text-center">
-          <SectionMark number="06" label="Now" className="mb-8" />
+    <section className="relative px-6 py-28 md:py-40">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/95 to-shiro dark:from-kuro dark:via-kuro/95 dark:to-kuro" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-sakura/5 dark:bg-sakura/5 blur-3xl" />
+      </div>
+      
+      <div className="relative max-w-5xl mx-auto">
+        <div ref={ref} className="reveal">
+          <div className="flex flex-col items-center text-center">
+            <SectionMark number="06" label="Now" className="mb-10" />
 
-          <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.02em] text-foreground mb-10">
-            Right now.
-          </h2>
+            <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.02em] text-kuro/95 dark:text-shiro/95 mb-12">
+              Right now.
+            </h2>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-12 max-w-3xl">
-            {words.map((word, i) => (
-              <span
-                key={word}
-                className="font-display text-2xl md:text-4xl font-light tracking-[-0.02em] text-foreground/90"
-              >
-                {word}
-                {i < words.length - 1 && (
-                  <span className="text-vermilion/60 ml-4">·</span>
-                )}
-              </span>
-            ))}
-          </div>
+            {/* Words with Japanese characters */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 mb-14">
+              {words.map((word, i) => (
+                <span
+                  key={word.en}
+                  className="group flex items-center gap-2"
+                >
+                  <span className="font-display text-2xl md:text-4xl font-light tracking-[-0.02em] text-kuro/90 dark:text-shiro/90">
+                    {word.en}
+                  </span>
+                  <span className="font-jp text-sm text-beni/50 group-hover:text-beni/80 transition-colors">
+                    {word.jp}
+                  </span>
+                  {i < words.length - 1 && (
+                    <span className="text-beni/40 ml-2 hidden sm:inline">·</span>
+                  )}
+                </span>
+              ))}
+            </div>
 
-          <p className="text-base md:text-lg font-light text-muted-foreground leading-relaxed max-w-xl">
-            I'm exploring technology, developing my skills, learning more about
-            people and the world, and figuring out what kind of life I want to
-            build.
-          </p>
+            <p className="text-base md:text-lg font-light text-kuro/60 dark:text-shiro/60 leading-relaxed max-w-xl mb-10">
+              I'm exploring technology, developing my skills, learning more about
+              people and the world, and figuring out what kind of life I want to build.
+            </p>
 
-          <div className="mt-12 font-jp text-sm text-muted-foreground/50 tracking-[0.5em]">
-            現在
+            <div className="font-jp text-sm text-kuro/40 dark:text-shiro/40 tracking-[0.3em]">
+              現在
+            </div>
+            <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-kuro/30 dark:text-shiro/30 font-mono">
+              Genzai
+            </div>
           </div>
         </div>
       </div>

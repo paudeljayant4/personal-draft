@@ -14,7 +14,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-shiro dark:bg-kuro relative">
       <ScrollProgress />
       <Nav />
       <main>

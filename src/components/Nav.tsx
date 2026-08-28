@@ -17,7 +17,7 @@ export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -26,85 +26,106 @@ export const Nav = () => {
   useEffect(() => {
     if (!isOpen) return;
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
   return (
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between px-6 md:px-10 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "bg-background/70 backdrop-blur-xl border-b border-border/40"
-            : "bg-transparent"
+            ? "py-3 bg-shiro/80 dark:bg-kuro/80 backdrop-blur-xl border-b border-ai/10 dark:border-shiro/10"
+            : "py-5 bg-transparent"
         )}
       >
-        <Link
-          to="/"
-          className="text-[15px] font-medium tracking-tight text-foreground hover:no-underline group flex items-center gap-2"
-        >
-          <span className="text-vermilion opacity-70 group-hover:opacity-100 transition-opacity">●</span>
-          Jayant
-        </Link>
+        <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between">
+          <Link
+            to="/"
+            className="group flex items-center gap-2.5 hover:no-underline"
+          >
+            {/* Mon (family crest) inspired dot */}
+            <div className="relative w-6 h-6 flex items-center justify-center">
+              <div className="w-2 h-2 rounded-full bg-beni/80 group-hover:bg-beni transition-colors duration-300" />
+              <div className="absolute inset-0 rounded-full bg-beni/20 group-hover:bg-beni/30 scale-150 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+            </div>
+            <span className="text-[15px] font-medium tracking-[0.02em] text-kuro/90 dark:text-shiro/90">
+              Jayant
+            </span>
+          </Link>
 
-        <nav className="hidden md:flex items-center gap-9">
-          {navLinks.map((link) => (
-            <a
-              key={link.to}
-              href={link.to}
-              className="text-[13px] font-normal text-muted-foreground hover:text-foreground transition-colors relative group"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 right-0 h-px bg-vermilion scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-            </a>
-          ))}
-        </nav>
+          <nav className="hidden md:flex items-center gap-10">
+            {navLinks.map((link, i) => (
+              <a
+                key={link.to}
+                href={link.to}
+                className="group relative text-[13px] font-normal text-kuro/60 dark:text-shiro/60 hover:text-kuro dark:hover:text-shiro transition-colors duration-300"
+              >
+                {link.label}
+                <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-beni scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left rounded-full" />
+              </a>
+            ))}
+          </nav>
 
-        <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 -mr-2 text-foreground hover:text-muted-foreground"
-            aria-label="Open menu"
-            aria-expanded={isOpen}
+            className="md:hidden relative w-8 h-8 flex items-center justify-center"
+            aria-label="Toggle menu"
           >
-            {isOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <div className="relative w-5 h-4">
+              <span className={cn(
+                "absolute left-0 w-full h-px bg-kuro dark:bg-shiro transition-all duration-300",
+                isOpen ? "top-1/2 rotate-45" : "top-0"
+              )} />
+              <span className={cn(
+                "absolute top-1/2 left-0 w-full h-px bg-kuro dark:bg-shiro transition-all duration-300",
+                isOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+              )} />
+              <span className={cn(
+                "absolute left-0 w-full h-px bg-kuro dark:bg-shiro transition-all duration-300",
+                isOpen ? "top-1/2 -rotate-45" : "bottom-0"
+              )} />
+            </div>
           </button>
         </div>
       </header>
 
-      {isMobile && isOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/95 backdrop-blur-2xl animate-fade-in">
-          <div className="space-y-8 text-center">
+      {/* Mobile full-screen menu */}
+      <div
+        className={cn(
+          "fixed inset-0 z-40 bg-shiro dark:bg-kuro transition-all duration-500 flex flex-col",
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        )}
+      >
+        <div className="flex-1 flex flex-col items-center justify-center px-6">
+          <nav className="space-y-8 text-center">
             {navLinks.map((link, i) => (
               <a
                 key={link.to}
                 href={link.to}
                 onClick={() => setIsOpen(false)}
-                className="block text-3xl font-display font-light text-foreground hover:no-underline hover:text-vermilion transition-colors"
-                style={{ animationDelay: `${i * 50}ms` }}
+                className="block text-3xl font-light text-kuro/90 dark:text-shiro/90 hover:text-beni dark:hover:text-beni transition-colors duration-300"
+                style={{ 
+                  transitionDelay: isOpen ? `${i * 80}ms` : "0ms",
+                  transform: isOpen ? "translateY(0)" : "translateY(20px)",
+                  opacity: isOpen ? 1 : 0
+                }}
               >
-                <span className="text-xs font-mono text-muted-foreground mr-3">
+                <span className="font-mono text-xs text-beni/50 mr-3">
                   0{i + 1}
                 </span>
                 {link.label}
               </a>
             ))}
-          </div>
-          <div className="absolute bottom-12 text-xs tracking-[0.3em] uppercase text-muted-foreground font-mono">
-            EST. 2009
-          </div>
+          </nav>
         </div>
-      )}
+        
+        <div className="pb-16 text-center">
+          <span className="text-[10px] tracking-[0.4em] uppercase text-kuro/40 dark:text-shiro/40 font-mono">
+            一期一会 — Ichi-go ichi-e
+          </span>
+        </div>
+      </div>
     </>
   );
 };
