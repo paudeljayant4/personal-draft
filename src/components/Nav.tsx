@@ -35,7 +35,7 @@ export const Nav = () => {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "py-3 bg-shiro/80 dark:bg-kuro/80 backdrop-blur-xl border-b border-ai/10 dark:border-shiro/10"
+            ? "py-3 bg-shiro/80 dark:bg-kuro/80 backdrop-blur-xl border-b border-gold/10 dark:border-gold/20"
             : "py-5 bg-transparent"
         )}
       >
@@ -44,10 +44,10 @@ export const Nav = () => {
             to="/"
             className="group flex items-center gap-2.5 hover:no-underline"
           >
-            {/* Mon (family crest) inspired dot */}
+            {/* Mon (family crest) inspired dot with gold accent */}
             <div className="relative w-6 h-6 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-beni/80 group-hover:bg-beni transition-colors duration-300" />
-              <div className="absolute inset-0 rounded-full bg-beni/20 group-hover:bg-beni/30 scale-150 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+              <div className="w-2 h-2 rounded-full bg-gold/80 group-hover:bg-gold transition-colors duration-300" />
+              <div className="absolute inset-0 rounded-full bg-gold/20 group-hover:bg-gold/30 scale-150 opacity-0 group-hover:opacity-100 transition-all duration-500" />
             </div>
             <span className="text-[15px] font-medium tracking-[0.02em] text-kuro/90 dark:text-shiro/90">
               Jayant
@@ -62,7 +62,7 @@ export const Nav = () => {
                 className="group relative text-[13px] font-normal text-kuro/60 dark:text-shiro/60 hover:text-kuro dark:hover:text-shiro transition-colors duration-300"
               >
                 {link.label}
-                <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-beni scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left rounded-full" />
+                <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left rounded-full" />
               </a>
             ))}
           </nav>
@@ -104,14 +104,14 @@ export const Nav = () => {
                 key={link.to}
                 href={link.to}
                 onClick={() => setIsOpen(false)}
-                className="block text-3xl font-light text-kuro/90 dark:text-shiro/90 hover:text-beni dark:hover:text-beni transition-colors duration-300"
+                className="block text-3xl font-light text-kuro/90 dark:text-shiro/90 hover:text-gold dark:hover:text-gold transition-colors duration-300"
                 style={{ 
                   transitionDelay: isOpen ? `${i * 80}ms` : "0ms",
                   transform: isOpen ? "translateY(0)" : "translateY(20px)",
                   opacity: isOpen ? 1 : 0
                 }}
               >
-                <span className="font-mono text-xs text-beni/50 mr-3">
+                <span className="font-mono text-xs text-gold/50 mr-3">
                   0{i + 1}
                 </span>
                 {link.label}

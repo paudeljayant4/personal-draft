@@ -25,8 +25,16 @@ export const Skills = () => {
         <div className="absolute inset-0 hishi-pattern opacity-3" />
         <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
+        {/* NEW: Color theory background art - complementary harmony */
+        <div className="absolute inset-0 gold-complement-pattern opacity-15" />
+        <div className="absolute inset-0 color-theory-overlay" />
+        
         <div className="glow-ambient glow-matcha w-[600px] h-[600px] top-[-20%] right-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
         <div className="glow-ambient glow-ai w-[400px] h-[400px] bottom-[-15%] left-[10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-7s" }} />
+        
+        {/* NEW: Gold ambient glows */
+        <div className="glow-ambient glow-gold w-[350px] h-[350px] top-[40%] left-[30%] opacity-15 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
+        <div className="glow-ambient glow-gold-triadic-1 w-[250px] h-[250px] bottom-[20%] right-[25%] opacity-10 animate-pulse-subtle" style={{ animationDelay: "-6s" }} />
         
         <div className="absolute inset-0 grid-veil opacity-30" />
       </div>
@@ -35,9 +43,9 @@ export const Skills = () => {
         <div ref={ref} className="reveal">
           <div className="flex flex-col items-center text-center mb-20">
             <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-kuro/45 dark:text-shiro/45 mb-12">
-              <span className="font-mono text-beni/80 text-[10px]">05</span>
+              <span className="font-mono text-gold/80 text-[10px]">05</span>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-px bg-gradient-to-r from-beni/60 to-transparent" />
+                <div className="w-6 h-px bg-gradient-to-r from-gold/60 to-transparent" />
                 <span>Skills</span>
               </div>
             </div>
@@ -56,12 +64,12 @@ export const Skills = () => {
                   className="reveal group"
                   style={{ transitionDelay: `${(i % 7) * 100}ms` }}
                 >
-                  <div className="relative px-6 py-4 rounded-full bg-card/40 backdrop-blur-sm border border-border/40 text-sm font-light text-kuro/80 dark:text-shiro/80 transition-all duration-500 hover:border-beni/30 hover:-translate-y-0.5 group-hover:text-beni dark:group-hover:text-beni">
+                  <div className="relative px-6 py-4 rounded-full bg-card/40 backdrop-blur-sm border border-border/40 text-sm font-light text-kuro/80 dark:text-shiro/80 transition-all duration-500 hover:border-gold/30 hover:-translate-y-0.5 group-hover:text-gold dark:group-hover:text-gold">
                     <span className="font-mono text-[10px] text-kuro/40 dark:text-shiro/40 mr-3">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     {skill.name}
-                    <span className="ml-3 font-jp text-[10px] text-kuro/30 dark:text-shiro/30 group-hover:text-beni/50 transition-colors duration-500">
+                    <span className="ml-3 font-jp text-[10px] text-kuro/30 dark:text-shiro/30 group-hover:text-gold/50 transition-colors duration-500">
                       {skill.jp}
                     </span>
                   </div>
