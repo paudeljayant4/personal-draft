@@ -190,7 +190,7 @@
   /* Subtle paper texture - very restrained */
   .paper-veil {
     background-image: 
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\");
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-blend-mode: soft-light;
     opacity: 0.015;
   }
@@ -350,21 +350,21 @@
   /* NEW: Color theory background patterns */
   /* Triadic harmony pattern - gold with its triadic colors */
   .gold-triadic-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%23ffffff' fill-opacity='0.02'/%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='%23ffffff' fill-opacity='0.03'/%3E%3Cpath d='M25 0 L75 50 L25 100 L-25 50 Z' fill='%23ffffff' fill-opacity='0.02'/%3E%3Cpath d='M75 0 L125 50 L75 100 L25 50 Z' fill='%23ffffff' fill-opacity='0.02'/%3E/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%23ffffff' fill-opacity='0.02'/%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='%23ffffff' fill-opacity='0.03'/%3E%3Cpath d='M25 0 L75 50 L25 100 L-25 50 Z' fill='%23ffffff' fill-opacity='0.02'/%3E%3Cpath d='M75 0 L125 50 L75 100 L25 50 Z' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 100px 100px;
   }
   
   /* Analogous harmony pattern - gold with adjacent colors */
   .gold-analogous-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='30' r='15' fill='%23ffffff' fill-opacity='0.02'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23ffffff' fill-opacity='0.03'/%3E%3Ccircle cx='50' cy='70' r='15' fill='%23ffffff' fill-opacity='0.02'/%3E/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='30' r='15' fill='%23ffffff' fill-opacity='0.02'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23ffffff' fill-opacity='0.03'/%3E%3Ccircle cx='50' cy='70' r='15' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 100px 100px;
   }
   
   /* Complementary harmony pattern - gold with its complement */
   .gold-complement-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='50' height='100' fill='%23ffffff' fill-opacity='0.02'/%3E%3Crect x='50' y='0' width='50' height='100' fill='%23ffffff' fill-opacity='0.03'/%3E/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='50' height='100' fill='%23ffffff' fill-opacity='0.02'/%3E%3Crect x='50' y='0' width='50' height='100' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 100px 50px;
   }
@@ -387,28 +387,6 @@
       radial-gradient(circle at 75% 75%, hsl(var(--gold) / 0.1) 0%, transparent 50%);
     background-blend-mode: screen;
     opacity: 0.15;
-  }
-  
-  /* Enhanced patterns for depth */
-  .kakure-kiri-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 L40 80 M0 40 L80 40 M20 20 L60 60 M20 60 L60 20' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.02'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-  }
-  
-  .kagome-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='2' fill='%23ffffff' fill-opacity='0.03'/%3E%3Cpath d='M20 5 L20 35 M5 20 L35 20' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.02'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-  }
-  
-  /* Traditional Japanese patterns */
-  .hishi-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15' r='2' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-  }
-  
-  .tatehira-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='30' height='30' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.02' fill='none'/%3E%3C/svg%3E");
-    background-repeat: repeat;
   }
 }
 
