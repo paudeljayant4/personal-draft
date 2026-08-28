@@ -64,7 +64,7 @@ const InterestCard = ({
     >
       <div className="relative h-full p-10 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 transition-all duration-700 hover:border-beni/30 hover:-translate-y-1">
         
-        {/* Subtle hover glow */}
+        {/* Enhanced hover glow */}
         <div className="glow-ambient glow-beni w-full h-full inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ position: "absolute" }} />
         
         {/* Japanese character - very subtle */}
@@ -87,7 +87,7 @@ const InterestCard = ({
           {description}
         </p>
 
-        {/* Minimal hover accent */}
+        {/* Enhanced hover accent */}
         <div className="mt-8 h-px w-0 bg-gradient-to-r from-beni to-transparent group-hover:w-16 transition-all duration-700 ease-out" />
       </div>
     </div>
@@ -101,11 +101,15 @@ export const Interests = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-shiro/98 dark:bg-kuro/98" />
         
-        {/* Subtle background patterns */}
+        {/* Enhanced background patterns */}
         <div className="absolute inset-0 asanoha-pattern opacity-6" />
         <div className="absolute inset-0 komon-pattern opacity-4" />
+        <div className="absolute inset-0 kakure-kiri-pattern opacity-3" />
+        <div className="absolute inset-0 kagome-pattern opacity-3" />
+        <div className="absolute inset-0 hishi-pattern opacity-3" />
+        <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
-        {/* Single ambient glow */}
+        {/* Enhanced ambient glows */}
         <div className="glow-ambient glow-sakura w-[600px] h-[600px] top-[-15%] left-[-10%] opacity-40 animate-breathe-soft" style={{ animationDelay: "-2s" }} />
         <div className="glow-ambient glow-ai w-[500px] h-[500px] bottom-[-10%] right-[-10%] opacity-30 animate-breathe-soft" style={{ animationDelay: "-5s" }} />
         

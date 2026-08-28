@@ -7,9 +7,13 @@ export const Mindset = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-shiro/98 dark:bg-kuro/98" />
         
-        {/* Subtle background patterns */}
+        {/* Enhanced background patterns */}
         <div className="absolute inset-0 asanoha-pattern opacity-6" />
         <div className="absolute inset-0 komon-pattern opacity-4" />
+        <div className="absolute inset-0 kakure-kiri-pattern opacity-4" />
+        <div className="absolute inset-0 kagome-pattern opacity-4" />
+        <div className="absolute inset-0 hishi-pattern opacity-4" />
+        <div className="absolute inset-0 tatehira-pattern opacity-4" />
         
         <div className="glow-ambient glow-beni w-[600px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 animate-breathe-soft" />
         

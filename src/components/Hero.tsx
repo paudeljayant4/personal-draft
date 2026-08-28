@@ -10,6 +10,10 @@ export const Hero = () => {
         <div className="absolute inset-0 asanoha-pattern opacity-15" />
         <div className="absolute inset-0 seigaiha-pattern opacity-10" />
         <div className="absolute inset-0 komon-pattern opacity-8" />
+        <div className="absolute inset-0 kakure-kiri-pattern opacity-6" />
+        <div className="absolute inset-0 kagome-pattern opacity-5" />
+        <div className="absolute inset-0 hishi-pattern opacity-4" />
+        <div className="absolute inset-0 tatehira-pattern opacity-4" />
         
         {/* Japanese sakura pattern overlay */}
         <div className="absolute inset-0 sakura-pattern" />
@@ -33,6 +37,7 @@ export const Hero = () => {
         <div className="glow-ambient glow-beni w-[600px] h-[600px] top-[15%] right-[10%] animate-breathe-soft" />
         <div className="glow-ambient glow-ai w-[500px] h-[500px] bottom-[15%] left-[10%] animate-breathe-soft" style={{ animationDelay: "-2s" }} />
         <div className="glow-ambient glow-sakura w-[400px] h-[400px] top-[35%] left-[25%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
+        <div className="glow-ambient glow-matcha w-[350px] h-[350px] top-[60%] right-[30%] opacity-15 animate-pulse-subtle" style={{ animationDelay: "-1s" }} />
         
         {/* Floating sakura petals */}
         <div className="absolute top-[-5%] left-[10%] w-[30px] h-[30px] rounded-full bg-sakura/20 animate-petal-fall" style={{ animationDelay: "0s", animationDuration: "12s" }} />
@@ -44,10 +49,15 @@ export const Hero = () => {
         {/* Ink bloom effects */}
         <div className="absolute top-[20%] left-[20%] w-[80px] h-[80px] rounded-full bg-beni/10 animate-ink-bloom" />
         <div className="absolute bottom-[15%] right-[25%] w-[60px] h-[60px] rounded-full bg-ai/8 animate-ink-bloom" style={{ animationDelay: "1s" }} />
+        
+        {/* Subtle floating orbs */}
+        <div className="floating-orb orb-beni w-[300px] h-[300px] top-[40%] right-[40%] opacity-15 animate-float-orb-subtle" />
+        <div className="floating-orb orb-ai w-[250px] h-[250px] bottom-[30%] left-[30%] opacity-12 animate-float-orb-subtle" style={{ animationDelay: "-5s" }} />
+        <div className="floating-orb orb-matcha w-[200px] h-[200px] top-[70%] left-[60%] opacity-10 animate-wave-float" style={{ animationDelay: "-8s" }} />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Minimal section marker */}
+        {/* Enhanced section marker */}
         <div className="flex justify-center mb-16 animate-fade-up opacity-0" style={{ animationDelay: "150ms" }}>
           <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-kuro/45 dark:text-shiro/45">
             <span className="font-mono text-beni/80 text-[10px]">01</span>
@@ -58,15 +68,16 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Main title - generous spacing */}
+        {/* Enhanced main title with shimmer effect */}
         <h1
-          className="font-display text-[clamp(4.5rem,15vw,11rem)] font-light leading-[0.9] tracking-[-0.05em] text-kuro/95 dark:text-shiro/95 mb-12 animate-fade-up opacity-0"
+          className="font-display text-[clamp(4.5rem,15vw,11rem)] font-light leading-[0.9] tracking-[-0.05em] text-kuro/95 dark:text-shiro/95 mb-12 animate-fade-up opacity-0 relative"
           style={{ animationDelay: "300ms" }}
         >
           JAYANT
+          <span className="absolute -inset-4 bg-gradient-to-r from-beni/10 to-transparent blur-2xl opacity-0 animate-shimmer" />
         </h1>
 
-        {/* Tagline - restrained */}
+        {/* Enhanced tagline - restrained */}
         <div className="space-y-5 mb-16 animate-fade-up opacity-0" style={{ animationDelay: "500ms" }}>
           <p className="text-base md:text-lg font-light text-kuro/70 dark:text-shiro/70 tracking-wide">
             Curious by nature. Driven by possibility.
@@ -76,14 +87,14 @@ export const Hero = () => {
           </p>
         </div>
 
-        {/* Minimal divider */}
+        {/* Enhanced minimal divider */}
         <div className="flex items-center justify-center gap-4 mb-16 animate-fade-up opacity-0" style={{ animationDelay: "700ms" }}>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-beni/50 to-transparent" />
           <div className="w-1.5 h-1.5 rounded-full bg-beni/70" />
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-beni/50 to-transparent" />
         </div>
 
-        {/* Subtitle */}
+        {/* Enhanced subtitle */}
         <p
           className="text-[10px] uppercase tracking-[0.45em] text-kuro/50 dark:text-shiro/50 mb-20 animate-fade-up opacity-0 font-mono"
           style={{ animationDelay: "800ms" }}
@@ -91,24 +102,24 @@ export const Hero = () => {
           A personal space documenting the person I'm becoming
         </p>
 
-        {/* Scroll indicator - minimal */}
+        {/* Enhanced scroll indicator */}
         <div
           className="animate-fade-up opacity-0"
           style={{ animationDelay: "1000ms" }}
         >
           <a
             href="#about"
-            className="group inline-flex flex-col items-center gap-4 text-xs text-kuro/60 dark:text-shiro/60 hover:text-beni dark:hover:text-beni transition-colors duration-500"
+            className="group inline-flex flex-col items-center gap-4 text-xs text-kuro/60 dark:text-shiro/60 hover:text-beni dark:hover:text-beni transition-all duration-500 hover:scale-105"
           >
             <span className="text-[9px] uppercase tracking-[0.3em] font-mono">Scroll</span>
-            <div className="w-5 h-8 rounded-full border border-current/20 flex items-start justify-center p-1 group-hover:border-beni/40 transition-colors duration-500">
+            <div className="w-5 h-8 rounded-full border border-current/20 flex items-start justify-center p-1 group-hover:border-beni/40 group-hover:bg-beni/5 transition-all duration-500">
               <div className="w-1 h-2 rounded-full bg-current animate-bounce" />
             </div>
           </a>
         </div>
       </div>
 
-      {/* Bottom meta - minimal */}
+      {/* Bottom meta - enhanced */}
       <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end text-[9px] uppercase tracking-[0.4em] text-kuro/40 dark:text-shiro/40 font-mono">
         <span>EST. 2009</span>
         <span className="hidden md:block font-jp tracking-[0.15em]">存在 — Sonzai</span>

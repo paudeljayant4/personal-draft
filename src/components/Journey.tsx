@@ -50,7 +50,7 @@ const ExperienceItem = ({
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="md:grid md:grid-cols-12 md:gap-12 items-baseline">
-        {/* Timeline marker - minimal */}
+        {/* Enhanced timeline marker */}
         <div className="hidden md:flex md:col-span-3 items-center justify-end gap-6">
           <div className="text-right">
             <div className="font-mono text-xs text-kuro/55 dark:text-shiro/55 tracking-wider">
@@ -64,9 +64,9 @@ const ExperienceItem = ({
           </div>
         </div>
 
-        {/* Content - generous spacing */}
+        {/* Enhanced content */}
         <div className="md:col-span-9 md:pl-16 relative">
-          {/* Subtle vertical line */}
+          {/* Enhanced vertical line */}
           <div className="hidden md:block absolute left-4 top-3 bottom-0 w-px bg-gradient-to-b from-beni/40 via-beni/15 to-transparent" />
 
           {/* Mobile timeline */}
@@ -102,9 +102,13 @@ export const Journey = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/99 to-shiro dark:from-kuro dark:via-kuro/99 dark:to-kuro" />
         
-        {/* Subtle background patterns */}
+        {/* Enhanced background patterns */}
         <div className="absolute inset-0 asanoha-pattern opacity-7" />
         <div className="absolute inset-0 komon-pattern opacity-5" />
+        <div className="absolute inset-0 kakure-kiri-pattern opacity-4" />
+        <div className="absolute inset-0 kagome-pattern opacity-4" />
+        <div className="absolute inset-0 hishi-pattern opacity-3" />
+        <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
         <div className="glow-ambient glow-koh w-[500px] h-[500px] top-[5%] left-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
         <div className="glow-ambient glow-sakura w-[450px] h-[450px] bottom-[5%] right-[-10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-6s" }} />

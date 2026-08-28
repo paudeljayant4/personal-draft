@@ -17,9 +17,13 @@ export const Vision = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro to-shiro/95 dark:from-kuro dark:to-kuro/95" />
         
-        {/* Subtle background patterns */}
+        {/* Enhanced background patterns */}
         <div className="absolute inset-0 asanoha-pattern opacity-4" />
         <div className="absolute inset-0 komon-pattern opacity-3" />
+        <div className="absolute inset-0 kakure-kiri-pattern opacity-3" />
+        <div className="absolute inset-0 kagome-pattern opacity-3" />
+        <div className="absolute inset-0 hishi-pattern opacity-3" />
+        <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
         {/* Single enso circle - very subtle */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

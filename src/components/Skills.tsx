@@ -17,9 +17,13 @@ export const Skills = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-shiro/98 dark:bg-kuro/98" />
         
-        {/* Subtle background patterns */}
+        {/* Enhanced background patterns */}
         <div className="absolute inset-0 asanoha-pattern opacity-6" />
         <div className="absolute inset-0 komon-pattern opacity-4" />
+        <div className="absolute inset-0 kakure-kiri-pattern opacity-3" />
+        <div className="absolute inset-0 kagome-pattern opacity-3" />
+        <div className="absolute inset-0 hishi-pattern opacity-3" />
+        <div className="absolute inset-0 tatehira-pattern opacity-3" />
         
         <div className="glow-ambient glow-matcha w-[600px] h-[600px] top-[-20%] right-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
         <div className="glow-ambient glow-ai w-[400px] h-[400px] bottom-[-15%] left-[10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-7s" }} />
