@@ -69,14 +69,6 @@ export default {
           analogous2: "hsl(var(--gold-analogous-2))",
           complement: "hsl(var(--gold-complement))",
         },
-        karashi: "hsl(var(--karashi))",
-        kon: "hsl(var(--kon))",
-        mizugaki: "hsl(var(--mizugaki))",
-        usuzumi: "hsl(var(--usuzumi))",
-        vermilion: {
-          DEFAULT: "hsl(var(--vermilion))",
-          500: "hsl(var(--vermilion))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
