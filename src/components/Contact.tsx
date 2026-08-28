@@ -28,9 +28,13 @@ const socials = [
 export const Contact = () => {
   const ref = useReveal();
   return (
-    <section id="connect" className="relative px-6 py-40 md:py-56 overflow-hidden">
+    <section id="connect" className="relative px-6 py-40 md:py-56 overflow-hidden>
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro to-shiro/98 dark:from-kuro dark:to-kuro/98" />
+        
+        {/* Subtle background patterns */}
+        <div className="absolute inset-0 asanoha-pattern opacity-5" />
+        <div className="absolute inset-0 komon-pattern opacity-3" />
         
         <div className="glow-ambient glow-sakura w-[500px] h-[500px] top-[-10%] left-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
         <div className="glow-ambient glow-matcha w-[450px] h-[450px] bottom-[-15%] right-[-10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-6s" }} />

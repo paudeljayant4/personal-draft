@@ -8,6 +8,10 @@ export const About = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/99 to-shiro dark:from-kuro dark:via-kuro/99 dark:to-kuro" />
         
+        {/* Subtle background patterns */}
+        <div className="absolute inset-0 asanoha-pattern opacity-8" />
+        <div className="absolute inset-0 komon-pattern opacity-5" />
+        
         {/* Single ambient glow */}
         <div className="glow-ambient glow-ai w-[500px] h-[500px] top-[10%] right-[-10%] animate-breathe-soft" />
         <div className="glow-ambient glow-beni w-[400px] h-[400px] bottom-[20%] left-[-10%] animate-breathe-soft" style={{ animationDelay: "-4s" }} />

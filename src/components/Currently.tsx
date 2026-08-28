@@ -14,6 +14,10 @@ export const Currently = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/99 to-shiro dark:from-kuro dark:via-kuro/99 dark:to-kuro" />
         
+        {/* Subtle background patterns */}
+        <div className="absolute inset-0 asanoha-pattern opacity-5" />
+        <div className="absolute inset-0 komon-pattern opacity-3" />
+        
         {/* Single central glow */}
         <div className="glow-ambient glow-sakura w-[700px] h-[700px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 animate-breathe-soft" />
         

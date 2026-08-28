@@ -101,6 +101,10 @@ export const Interests = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-shiro/98 dark:bg-kuro/98" />
         
+        {/* Subtle background patterns */}
+        <div className="absolute inset-0 asanoha-pattern opacity-6" />
+        <div className="absolute inset-0 komon-pattern opacity-4" />
+        
         {/* Single ambient glow */}
         <div className="glow-ambient glow-sakura w-[600px] h-[600px] top-[-15%] left-[-10%] opacity-40 animate-breathe-soft" style={{ animationDelay: "-2s" }} />
         <div className="glow-ambient glow-ai w-[500px] h-[500px] bottom-[-10%] right-[-10%] opacity-30 animate-breathe-soft" style={{ animationDelay: "-5s" }} />

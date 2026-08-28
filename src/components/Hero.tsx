@@ -1,16 +1,21 @@
 export const Hero = () => {
   return (
     <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
-      {/* Japanese art-inspired background */}
+      {/* Enhanced Japanese art-inspired background */}
       <div className="absolute inset-0 -z-10">
         {/* Base gradient - warm paper */}
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/98 to-shiro/95 dark:from-kuro dark:via-kuro/98 dark:to-kuro/95" />
+        
+        {/* Multiple layered patterns for depth */}
+        <div className="absolute inset-0 asanoha-pattern opacity-15" />
+        <div className="absolute inset-0 seigaiha-pattern opacity-10" />
+        <div className="absolute inset-0 komon-pattern opacity-8" />
         
         {/* Japanese sakura pattern overlay */}
         <div className="absolute inset-0 sakura-pattern" />
         
         {/* Ukiyo-e wave pattern */}
-        <div className="absolute inset-0 wave-pattern opacity-30" />
+        <div className="absolute inset-0 wave-pattern opacity-25" />
         
         {/* Sumi-e ink wash effect */}
         <div className="absolute inset-0 sumi-e-wash" />
@@ -24,11 +29,21 @@ export const Hero = () => {
         {/* Paper texture overlay */}
         <div className="absolute inset-0 paper-veil" />
         
-        {/* Single ambient glow - beni, very subtle */}
-        <div className="glow-ambient glow-beni w-[500px] h-[500px] top-[20%] right-[15%] animate-breathe-soft" />
+        {/* Enhanced ambient glows */}
+        <div className="glow-ambient glow-beni w-[600px] h-[600px] top-[15%] right-[10%] animate-breathe-soft" />
+        <div className="glow-ambient glow-ai w-[500px] h-[500px] bottom-[15%] left-[10%] animate-breathe-soft" style={{ animationDelay: "-2s" }} />
+        <div className="glow-ambient glow-sakura w-[400px] h-[400px] top-[35%] left-[25%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-4s" }} />
         
-        {/* Single ai glow - bottom left */}
-        <div className="glow-ambient glow-ai w-[400px] h-[400px] bottom-[10%] left-[10%] animate-breathe-soft" style={{ animationDelay: "-3s" }} />
+        {/* Floating sakura petals */}
+        <div className="absolute top-[-5%] left-[10%] w-[30px] h-[30px] rounded-full bg-sakura/20 animate-petal-fall" style={{ animationDelay: "0s", animationDuration: "12s" }} />
+        <div className="absolute top-[-5%] left-[30%] w-[25px] h-[25px] rounded-full bg-sakura/15 animate-petal-fall" style={{ animationDelay: "2s", animationDuration: "15s" }} />
+        <div className="absolute top-[-5%] left-[50%] w-[35px] h-[35px] rounded-full bg-sakura/25 animate-petal-fall" style={{ animationDelay: "1s", animationDuration: "10s" }} />
+        <div className="absolute top-[-5%] left-[70%] w-[20px] h-[20px] rounded-full bg-sakura/10 animate-petal-fall" style={{ animationDelay: "3s", animationDuration: "18s" }} />
+        <div className="absolute top-[-5%] left-[90%] w-[28px] h-[28px] rounded-full bg-sakura/18 animate-petal-fall" style={{ animationDelay: "1.5s", animationDuration: "14s" }} />
+        
+        {/* Ink bloom effects */}
+        <div className="absolute top-[20%] left-[20%] w-[80px] h-[80px] rounded-full bg-beni/10 animate-ink-bloom" />
+        <div className="absolute bottom-[15%] right-[25%] w-[60px] h-[60px] rounded-full bg-ai/8 animate-ink-bloom" style={{ animationDelay: "1s" }} />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">

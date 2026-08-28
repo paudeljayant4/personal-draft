@@ -102,6 +102,10 @@ export const Journey = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-shiro via-shiro/99 to-shiro dark:from-kuro dark:via-kuro/99 dark:to-kuro" />
         
+        {/* Subtle background patterns */}
+        <div className="absolute inset-0 asanoha-pattern opacity-7" />
+        <div className="absolute inset-0 komon-pattern opacity-5" />
+        
         <div className="glow-ambient glow-koh w-[500px] h-[500px] top-[5%] left-[-15%] opacity-25 animate-breathe-soft" style={{ animationDelay: "-3s" }} />
         <div className="glow-ambient glow-sakura w-[450px] h-[450px] bottom-[5%] right-[-10%] opacity-20 animate-breathe-soft" style={{ animationDelay: "-6s" }} />
         
